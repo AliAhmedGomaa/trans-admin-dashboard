@@ -1,0 +1,16 @@
+<div class="bookings-page">
+  <h2 class="page-title">Bookings</h2>
+
+  <mat-card class="table-card">
+    <app-shared-table
+      [data]="data"
+      [displayedColumns]="displayedColumns"
+      [havePagination]="true"
+      [title]="'Bookings'"
+      [loading]="loading"
+      (pageChanged)="onPageChanged($event)"
+    ></app-shared-table>
+  </mat-card>
+</div>
+
+

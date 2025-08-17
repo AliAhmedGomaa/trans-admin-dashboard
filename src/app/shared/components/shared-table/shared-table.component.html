@@ -1,0 +1,76 @@
+<div class="table-wrapper" *ngIf="!loading; else loadingTpl">
+  <mat-table
+    class="full-width-table figma-table"
+    matSort
+    [trackBy]="identity"
+    [dataSource]="dataSource"
+    (matSortChange)="sortData($event)"
+  >
+    <ng-container
+      *ngFor="let item of displayedColumns"
+      [matColumnDef]="item.key"
+    >
+      <ng-template #defaultHeaderTemplate let-element>
+        {{ item.displayName }}
+      </ng-template>
+
+      <ng-template #defaultCellTemplate let-element>
+        <div class="table-header" [ngClass]="{
+          'status-pill pending': item.key === 'status' && element[item.key] === 'Pending',
+          'status-pill confirmed': item.key === 'status' && element[item.key] === 'Confirmed',
+          'status-pill cancelled': item.key === 'status' && element[item.key] === 'Cancelled'
+        }">
+          {{ element[item?.key] }}
+        </div>
+      </ng-template>
+
+      <mat-header-cell
+        *matHeaderCellDef
+        mat-sort-header
+        [disabled]="!item.haveSort || isColumnEmpty(item.key)"
+      >
+        <ng-container
+          [ngTemplateOutlet]="item.headerTemplate || defaultHeaderTemplate"
+          [ngTemplateOutletContext]="{ $implicit: data }"
+        >
+        </ng-container>
+      </mat-header-cell>
+
+      <ng-content></ng-content>
+      <mat-cell *matCellDef="let element">
+        <ng-container
+          [ngTemplateOutlet]="item?.template || defaultCellTemplate"
+          [ngTemplateOutletContext]="{ $implicit: element }"
+        ></ng-container>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columns" class="figma-header-row"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns" class="figma-row"></mat-row>
+  </mat-table>
+</div>
+
+<mat-paginator
+  [pageSize]="paginationData.limit"
+  [pageIndex]="paginationData.page"
+  [length]="paginationData.total"
+  (page)="pageChanged.emit($event.pageIndex)"
+  showFirstLastButtons
+  aria-label="Select page"
+>
+</mat-paginator>
+
+<ng-template #loadingTpl>
+  <div class="loading-container">
+    <mat-spinner diameter="48"></mat-spinner>
+  </div>
+  <mat-paginator
+    [pageSize]="paginationData.limit"
+    [pageIndex]="paginationData.page"
+    [length]="paginationData.total"
+    (page)="pageChanged.emit($event.pageIndex)"
+    showFirstLastButtons
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</ng-template>

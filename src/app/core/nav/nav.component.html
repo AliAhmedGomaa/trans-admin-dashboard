@@ -1,0 +1,52 @@
+<section class="nav">
+  <mat-toolbar class="primary-toolbar">
+    <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span class="app-title">Bookings Dashboard</span>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container" [dir]="$any(currentDir)">
+    <mat-sidenav
+      #drawer
+      class="sidenav"
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)"
+    >
+      <div class="side-nav">
+        <ul class="nav-list">
+          <li class="nav-item" *ngFor="let item of menuItems; trackBy: identity">
+            <ng-container *ngIf="!item.children; else hasChildren">
+              <a class="nav-link" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="onNavItemClick(drawer)">
+                <mat-icon class="nav-icon" *ngIf="item.icon">{{ item.icon }}</mat-icon>
+                <span class="nav-text">{{ item.name }}</span>
+              </a>
+            </ng-container>
+            <ng-template #hasChildren>
+              <button class="nav-link" type="button" (click)="toggleGroup(item)">
+                <mat-icon class="nav-icon" *ngIf="item.icon">{{ item.icon }}</mat-icon>
+                <span class="nav-text">{{ item.name }}</span>
+                <mat-icon class="chevron">{{ isExpanded(item) ? 'expand_less' : 'expand_more' }}</mat-icon>
+              </button>
+              <ul class="sub-list" *ngIf="isExpanded(item)">
+                <li class="sub-item" *ngFor="let child of item.children; trackBy: identity">
+                  <a class="sub-link" [routerLink]="child.path" routerLinkActive="active" (click)="onNavItemClick(drawer)">
+                    <mat-icon class="sub-icon" *ngIf="child.icon">{{ child.icon }}</mat-icon>
+                    <span class="sub-text">{{ child.name }}</span>
+                  </a>
+                </li>
+              </ul>
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content [dir]="currentDir">
+      <div class="wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</section>
