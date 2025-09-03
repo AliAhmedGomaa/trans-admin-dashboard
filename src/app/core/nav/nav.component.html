@@ -4,6 +4,11 @@
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
     <span class="app-title">Bookings Dashboard</span>
+    <span class="spacer"></span>
+    <button mat-button (click)="toggleLanguage()">
+      <mat-icon>translate</mat-icon>
+      {{ currentLang === 'ar' ? 'EN' : 'AR' }}
+    </button>
   </mat-toolbar>
 
   <mat-sidenav-container class="sidenav-container" [dir]="$any(currentDir)">

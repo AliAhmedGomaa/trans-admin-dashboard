@@ -1,8 +1,9 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DOCUMENT } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
+  Inject,
   Component,
   OnInit,
   inject,
@@ -50,6 +51,7 @@ export class NavComponent implements OnInit {
   isHandset = false;
   identity = (_: number, item: NavItem) => item?.path ?? item?.name;
   expandedGroups = new Set<string>();
+  currentLang: 'en' | 'ar' = (localStorage.getItem('lang') as 'en' | 'ar') || 'en';
 
   toggleGroup(item: NavItem) {
     const key = item.name;
@@ -66,7 +68,8 @@ export class NavComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    @Inject(DOCUMENT) private document: Document
   ) {}
 
   async ngOnInit() {
@@ -76,6 +79,8 @@ export class NavComponent implements OnInit {
       this.cdr.detectChanges();
     });
 
+    this.currentDir = this.currentLang === 'ar' ? 'rtl' : 'ltr';
+    this.setDomDirection();
     this.cdr.detectChanges();
   }
 
@@ -95,6 +100,26 @@ export class NavComponent implements OnInit {
   onSidenavActionClick(drawer: any, action?: () => void) {
     if (this.isHandset) {
       drawer.close();
+    }
+  }
+
+  toggleLanguage() {
+    this.currentLang = this.currentLang === 'ar' ? 'en' : 'ar';
+    localStorage.setItem('lang', this.currentLang);
+    this.currentDir = this.currentLang === 'ar' ? 'rtl' : 'ltr';
+    this.setDomDirection();
+    this.cdr.detectChanges();
+  }
+
+  private setDomDirection() {
+    const dir = this.currentDir;
+    const lang = this.currentLang;
+    if (this.document?.documentElement) {
+      this.document.documentElement.setAttribute('dir', dir);
+      this.document.documentElement.setAttribute('lang', lang);
+    }
+    if (this.document?.body) {
+      this.document.body.setAttribute('dir', dir);
     }
   }
 }
