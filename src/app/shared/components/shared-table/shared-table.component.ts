@@ -26,6 +26,7 @@ import { RouterLink } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { CustomTablePagination } from './custom-table-pagination.directive';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-shared-table',
@@ -44,6 +45,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatButtonModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    TranslateModule,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -90,8 +92,9 @@ export class SharedTableComponent implements AfterViewInit, OnChanges {
       // Support multiple pagination shapes
       if (incoming?.pagination) {
         const p = incoming.pagination;
+        const zeroBasedPage = (typeof p.page === 'number') ? Math.max(0, p.page - 1) : 0;
         this.paginationData = {
-          page: p.page ?? 0,
+          page: zeroBasedPage,
           total: p.total ?? (Array.isArray(this.dataSource.data) ? this.dataSource.data.length : 0),
           limit: p.limit ?? this.paginationData.limit,
         };
@@ -121,5 +124,67 @@ export class SharedTableComponent implements AfterViewInit, OnChanges {
     return this.dataSource.data.every(
       (element: any) => !element[columnKey] || element[columnKey] === 'N/A'
     );
+  }
+
+  // -------- Custom paginator helpers (to match Figma) --------
+  get totalPages(): number {
+    const total = Number(this.paginationData?.total || 0);
+    const limit = Number(this.paginationData?.limit || 10);
+    return limit > 0 ? Math.max(1, Math.ceil(total / limit)) : 1;
+  }
+
+  get currentPage1Based(): number {
+    return Number(this.paginationData?.page || 0) + 1;
+  }
+
+  get pages(): Array<number | string> {
+    const total = this.totalPages;
+    const current = this.currentPage1Based;
+    const out: Array<number | string> = [];
+    if (total <= 7) {
+      for (let i = 1; i <= total; i++) out.push(i);
+      return out;
+    }
+    out.push(1);
+    if (current > 4) out.push('…');
+    const start = Math.max(2, current - 1);
+    const end = Math.min(total - 1, current + 1);
+    for (let i = start; i <= end; i++) out.push(i);
+    if (current < total - 3) out.push('…');
+    out.push(total);
+    return out;
+  }
+
+  goToPage(p1: number) {
+    if (p1 < 1 || p1 > this.totalPages) return;
+    this.pageChanged.emit(p1 - 1);
+  }
+
+  nextPage() {
+    this.goToPage(this.currentPage1Based + 1);
+  }
+
+  prevPage() {
+    this.goToPage(this.currentPage1Based - 1);
+  }
+
+  onPageSizeChange(val: string | number) {
+    const limit = Number(val) || this.paginationData.limit;
+    this.paginationData = { ...this.paginationData, limit };
+    this.pageChanged.emit(0);
+  }
+
+  // Range text (1-based)
+  get rangeStart(): number {
+    const total = Number(this.paginationData?.total || 0);
+    if (total === 0) return 0;
+    return Number(this.paginationData?.page || 0) * Number(this.paginationData?.limit || 10) + 1;
+  }
+
+  get rangeEnd(): number {
+    const total = Number(this.paginationData?.total || 0);
+    if (total === 0) return 0;
+    const tentative = this.rangeStart + Number(this.paginationData?.limit || 10) - 1;
+    return Math.min(total, tentative);
   }
 }

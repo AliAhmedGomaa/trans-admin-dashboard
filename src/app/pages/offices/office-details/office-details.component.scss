@@ -1,0 +1,20 @@
+.office-details { padding: 16px; }
+.header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.title { font-family: "Expo Arabic"; font-size: 24px; color: #1d1f1f; }
+.actions { display: flex; gap: 8px; }
+.btn { border-radius: 16px; padding: 8px 16px; font-weight: 500; }
+.btn-primary { background: #420098; color: #e9ebee; }
+.btn-danger-outline { background: #fde4e4; color: #f55157; }
+
+.sections { display: grid; gap: 16px; }
+.card { background: #fff; border-radius: 24px; padding: 16px; box-shadow: 0 0 0 6px #f5f7f7 inset; }
+.card-title { color: #666d80; font-size: 14px; font-weight: 500; margin-bottom: 16px; }
+.row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.item { position: relative; padding-inline-start: 12px; display: flex; flex-direction: column; gap: 6px; }
+.item::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: 0; width: 4px; background: #eeeeee; border-radius: 8px; }
+.item.full { grid-column: span 2; }
+.label { color: #a5a5a5; font-size: 14px; font-weight: 500; }
+.value { color: #1d1f1f; font-size: 16px; font-weight: 500; }
+.value.link { color: #420098; cursor: pointer; }
+
+

@@ -1,4 +1,4 @@
-@import '../../../../public/scss/variables';
+@import "../../../../public/scss/variables";
 
 .nav {
   .app-title {
@@ -8,7 +8,7 @@
   }
 
   .sidenav {
-    height: calc(100vh - 75px);
+    height: calc(100vh - 80px);
     top: 75px !important;
     width: 280px; // Consistent width for both side and over modes
   }
@@ -16,15 +16,15 @@
   .sidenav-header {
     background: white;
     border-bottom: 1px solid #e5e7eb;
-    
+
     h3 {
       margin: 0;
       color: #374151;
     }
-    
+
     .close-btn {
       color: #6b7280;
-      
+
       &:hover {
         color: #374151;
         background-color: #f3f4f6;
@@ -33,15 +33,18 @@
   }
 
   .mat-sidenav-content {
-    max-height: calc(100vh - 75px);
-    min-height: calc(100vh - 75px);
+    // max-height: calc(100vh - 80px);
+    // min-height: calc(100vh - 80px);
     margin-top: 75px;
     overflow-x: hidden;
     width: 100%;
     transition: margin 0.3s ease-in-out; // Smooth transition when sidenav opens/closes
   }
 
-  .sidenav-container { display: flex; background-color: #f5f5f5; }
+  .sidenav-container {
+    display: flex;
+    background-color: #f5f5f5;
+  }
 
   .mat-toolbar.primary-toolbar {
     position: fixed;
@@ -56,92 +59,158 @@
     }
   }
 
-  .spacer { flex: 1; }
-
-
+  .spacer {
+    flex: 1;
+  }
 
   /* Container paddings and layout */
-  .nav-list { list-style: none; padding: 8px 10px; margin: 0; display: flex; flex-direction: column; gap: 4px; align-items: stretch; }
+  .nav-list {
+    list-style: none;
+    padding: 32px 24px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+    padding-inline-end: 0;
+  }
 
-  /* Top-level item: left-aligned, fixed width, subtle rounded active background with larger corner on the right */
-  .nav-item { }
+  /* Top-level item styling */
+  .nav-item {
+    margin-bottom: 8px;
+  }
+  
   .nav-link {
     position: relative;
-    width: 100%; /* match visual width from design */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* no centering */
-    gap: 10px;
-    padding: 10px 12px;
-    border: none;
-    background: transparent;
-    color: #1d1f1f;
-    font-weight: 600;
-    text-align: left;
-    cursor: pointer;
-    text-decoration: none;
-    border-radius: 12px;
-  }
-  .nav-link:hover { background: #f5f7f7; }
-  .nav-link.active {
-    background: #f5f7f7; /* Dark/50 */
-    color: #1d1f1f;
-    border-top-left-radius: 12px;
-    border-bottom-left-radius: 12px;
-    border-top-right-radius: 24px; /* bigger outer curve */
-    border-bottom-right-radius: 24px;
-  }
-  .nav-link.active::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 8px;
-    bottom: 8px;
-    width: 4px;
-    background: #485fd0;
-    border-radius: 4px;
-  }
-  .nav-icon { color: #1d1f1f; font-size: 22px; }
-  .nav-text { flex: 1; }
-  .chevron { color: #a5a5a5; }
-
-  /* Sub items */
-  .sub-list { list-style: none; margin: 0; padding: 4px 0 6px 28px; display: flex; flex-direction: column; gap: 2px; }
-  .sub-item { }
-  .sub-link {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 10px;
-    padding: 12px 14px;
+    gap: 8px;
+    padding: 12px 12px;
+    border: none;
+    background: transparent;
+    color: #1d1f1f;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-align: right;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 16px;
+    height: 48px;
+    line-height: 1.5;
+  }
+  
+  .nav-link:hover {
+    background: #f5f7f7;
+  }
+  
+  .nav-link.active {
+    background: #f5f7f7;
+    color: #1d1f1f;
+  }
+  
+  .nav-icon {
+    color: #1d1f1f;
+    font-size: 20px;
+  }
+  
+  .nav-text {
+    // flex: 1;
+    // text-align: right;
+    // order: 1;
+  }
+  
+  .chevron {
+    color: #1d1f1f;
+    font-size: 16px;
+    order: 0;
+  }
+
+  /* Sub items */
+  .sub-list {
+    list-style: none;
+    margin: 4px 0 0 0;
+    padding: 0 0 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .sub-item {
+    margin-bottom: 4px;
+  }
+  
+  .sub-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 8px 12px;
     color: #1d1f1f;
     border-radius: 16px;
     text-decoration: none;
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    height: 40px;
+    text-align: right;
+    line-height: 1.5;
+  }
+  
+  .sub-link:hover {
+    background: #f5f7f7;
+  }
+  
+  .sub-link.active {
+    background: #f5f7f7;
+    color: #1d1f1f;
     font-weight: 700;
+    position: relative;
+  }
+  
+  .sub-link.active::before {
+    content: "";
+    position: absolute;
+    left: -24px;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    height: 80px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M0,0 L80,0 L80,40 Q60,40 60,60 L60,80 L0,80 Z' fill='%23f5f7f7'/%3E%3C/svg%3E") no-repeat;
+    background-size: contain;
+  }
+  
+  .sub-icon {
+    color: #1d1f1f;
     font-size: 20px;
+    order: 2;
   }
-  .sub-link:hover { background: #f5f7f7; }
-  .sub-link.active { background: #f5f7f7; color: #1d1f1f; }
-  .sub-icon { color: #1d1f1f; font-size: 24px; }
-
-  .language[dir='rtl'] button {
-    font-family: 'ClashDisplay' !important;
+  
+  .sub-text {
+    flex: 1;
+    text-align: right;
+    order: 1;
   }
 
-  .language[dir='ltr'] button {
-    font-family: 'IBM Plex Sans Arabic' !important;
+  .language[dir="rtl"] button {
+    font-family: "ClashDisplay" !important;
+  }
+
+  .language[dir="ltr"] button {
+    font-family: "IBM Plex Sans Arabic" !important;
   }
 
   mat-icon {
-    font-family: 'Material Icons' !important;
+    font-family: "Material Icons" !important;
   }
 
   ::ng-deep {
     .mat-drawer-inner-container {
       display: flex;
       flex-direction: column;
-      
     }
   }
 }

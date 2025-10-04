@@ -1,0 +1,173 @@
+<div class="car-create">
+  <div class="header">
+    <div class="title">{{ editingId ? ('CARS.EDIT_CAR' | translate) : ('CARS.NEW_CAR' | translate) }}</div>
+    <div class="actions">
+      <button class="btn btn-primary" (click)="submit()" [disabled]="loading">
+        {{ editingId ? ('COMMON.EDIT' | translate) : ('COMMON.ADD' | translate) }}
+      </button>
+      <button class="btn btn-danger-outline" (click)="goBack()">{{ "COMMON.CANCEL" | translate }}</button>
+    </div>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <!-- Car Information Card -->
+    <div class="card">
+      <div class="card-title">{{ "CARS.CAR_INFO" | translate }}</div>
+      <div class="upload-zone" [class.dragging]="isDragging" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)">
+        <div class="upload-zone__content">
+          <div class="upload-zone__icon">📤</div>
+          <div class="upload-zone__text">
+            <div class="upload-zone__title">{{ "CARS.DRAG_DROP_IMAGE" | translate }}</div>
+            <div class="upload-zone__hint">{{ "CARS.IMAGE_REQUIREMENTS" | translate }}</div>
+          </div>
+          <div class="upload-zone__actions">
+            <button type="button" class="btn btn-light" (click)="imageInput.click()">
+              {{ "CARS.BROWSE_IMAGE" | translate }}
+            </button>
+            <input #imageInput type="file" style="display: none" accept="image/*" (change)="onImageChange($event)" />
+          </div>
+        </div>
+        <div class="upload-zone__file" *ngIf="imageFile">{{ imageFile.name }}</div>
+        <div class="upload-zone__error" *ngIf="imageError">{{ imageError }}</div>
+      </div>
+
+      <div class="form-row">
+        <app-general-dropdown
+          [label]="'CARS.BRAND'"
+          [options]="[
+            { value: 'Toyota', viewValue: 'Toyota' },
+            { value: 'Honda', viewValue: 'Honda' },
+            { value: 'Nissan', viewValue: 'Nissan' },
+            { value: 'Hyundai', viewValue: 'Hyundai' }
+          ]"
+          formControlName="brand"
+          [errors]="form.get('brand')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-dropdown>
+        
+        <app-general-dropdown
+          [label]="'CARS.MODEL'"
+          [options]="[
+            { value: 'Camry', viewValue: 'Camry' },
+            { value: 'Corolla', viewValue: 'Corolla' },
+            { value: 'Accent', viewValue: 'Accent' },
+            { value: 'Supra', viewValue: 'Supra' }
+          ]"
+          formControlName="carModel"
+          [errors]="form.get('carModel')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-dropdown>
+      </div>
+
+      <div class="form-row">
+        <div class="km-counter-container">
+          <div class="field-label">{{ "CARS.KM_LIMIT" | translate }}</div>
+          <div class="km-counter">
+            <button type="button" class="counter-btn" (click)="decrementKm()">−</button>
+            <div class="counter-value">{{ form.get('kmLimit')?.value || 0 }}</div>
+            <button type="button" class="counter-btn" (click)="incrementKm()">+</button>
+          </div>
+        </div>
+
+        <app-general-dropdown
+          [label]="'CARS.OFFICE'"
+          [options]="offices"
+          formControlName="office"
+          [errors]="form.get('office')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-dropdown>
+      </div>
+
+      <div class="form-row">
+        <app-general-input
+          [label]="'CARS.YEAR'"
+          formControlName="year"
+          type="number"
+          [errors]="form.get('year')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+        
+        <app-general-input
+          [label]="'CARS.PLATE_NUMBER'"
+          formControlName="plateNumber"
+          [errors]="form.get('plateNumber')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+      </div>
+    </div>
+
+    <!-- License Information Card -->
+    <div class="card">
+      <div class="card-title">{{ "CARS.LICENSE_INFO" | translate }}</div>
+      
+      <div class="form-row">
+        <app-general-input
+          [label]="'CARS.LICENSE_EXPIRY'"
+          formControlName="licenseExpiryDate"
+          type="date"
+          [errors]="form.get('licenseExpiryDate')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+        
+        <app-general-input
+          [label]="'CARS.LICENSE_NUMBER'"
+          formControlName="licenseNumber"
+          [errors]="form.get('licenseNumber')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+      </div>
+
+      <div class="upload-zone" [class.dragging]="isDraggingLicense" (dragover)="onLicenseDragOver($event)" (dragleave)="onLicenseDragLeave($event)" (drop)="onLicenseDrop($event)">
+        <div class="upload-zone__content">
+          <div class="upload-zone__icon">📄</div>
+          <div class="upload-zone__text">
+            <div class="upload-zone__title">{{ "CARS.DRAG_DROP_LICENSE" | translate }}</div>
+            <div class="upload-zone__hint">{{ "CARS.LICENSE_REQUIREMENTS" | translate }}</div>
+          </div>
+          <div class="upload-zone__actions">
+            <button type="button" class="btn btn-light" (click)="licenseInput.click()">
+              {{ "CARS.BROWSE_FILES" | translate }}
+            </button>
+            <input #licenseInput type="file" style="display: none" accept=".pdf,.doc,.docx" (change)="onLicenseChange($event)" />
+          </div>
+        </div>
+        <div class="upload-zone__file" *ngIf="licenseFile">{{ licenseFile.name }}</div>
+        <div class="upload-zone__error" *ngIf="licenseError">{{ licenseError }}</div>
+      </div>
+    </div>
+
+    <!-- Additional Options Card -->
+    <div class="card">
+      <div class="card-title">{{ "CARS.ADDITIONAL_INFO" | translate }}</div>
+      
+      <div class="form-row">
+        <app-general-input
+          [label]="'CARS.PRICE_PER_DAY'"
+          formControlName="pricePerDay"
+          type="number"
+          [errors]="form.get('pricePerDay')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+        
+        <app-general-dropdown
+          [label]="'CARS.INSURANCE_TYPE'"
+          [options]="insuranceOptions"
+          formControlName="insuranceType"
+          [errors]="form.get('insuranceType')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-dropdown>
+      </div>
+
+      <div class="checkboxes">
+        <label class="checkbox-item">
+          <input type="checkbox" formControlName="deliveryOption" />
+          <span>{{ "CARS.DELIVERY_OPTION" | translate }}</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" formControlName="freeCancellation" />
+          <span>{{ "CARS.FREE_CANCELLATION" | translate }}</span>
+        </label>
+      </div>
+    </div>
+  </form>
+</div>

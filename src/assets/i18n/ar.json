@@ -1,0 +1,490 @@
+
+{
+  "NAV": {
+    "PROFILE": "الملف الشخصي",
+    "LOGOUT": "تسجيل الخروج"
+  },
+  "PAGINATION": {
+    "NEXT": "التالي",
+    "PREV": "السابق",
+    "SHOW": "عرض",
+    "FROM": "من",
+    "TO": "الى",
+    "OF": "من أصل",
+    "RESULTS": "نتيجة"
+  },
+  "BOOKINGS": {
+    "TITLE": "الحجوزات",
+    "EXPORT": "تصدير تقرير"
+  },
+  "TABLE": {
+    "BOOKING_NO": "رقم الحجز",
+    "CUSTOMER": "العميل",
+    "PHONE": "الجوال",
+    "CAR": "السيارة",
+    "START": "البدء",
+    "END": "الانتهاء",
+    "STATUS": "الحالة",
+    "TOTAL": "الإجمالي"
+  },
+  "OFFICES": {
+    "TITLE": "المكاتب",
+    "NAME": "الاسم",
+    "PHONE": "الهاتف",
+    "CITY": "المدينة",
+    "RATING": "التقييم",
+    "REG": "السجل التجاري",
+    "FILTER_NAME_PLACEHOLDER": "البحث باسم المكتب"
+  },
+  "FILTERS": {
+    "COMPANY": "الشركة",
+    "SELECT_COMPANY": "اختر الشركة",
+    "STATUS": "الحالة",
+    "SELECT_STATUS": "اختر الحالة",
+    "CLIENT_NAME": "اسم العميل",
+    "CLIENT_NAME_PLACEHOLDER": "اكتب اسم العميل",
+    "ALL_COMPANIES": "كل الشركات",
+    "COMPANY_SOLIMAN": "Soliman Cars",
+    "ALL_STATUS": "الكل",
+    "PENDING": "قيد المراجعة",
+    "CONFIRMED": "تم القبول",
+    "CANCELLED": "تم الإلغاء"
+  },
+  "COMMON": {
+    "SEARCH": "ابحث",
+    "DOWNLOAD": "تحميل",
+    "CLOSE": "إغلاق",
+    "CANCEL": "إلغاء",
+    "LOGO": "الشعار",
+    "EDIT": "تعديل",
+    "DELETE": "حذف",
+    "ADD": "إضافة",
+    "LOADING": "جاري التحميل",
+    "YES": "نعم",
+    "NO": "لا",
+    "CURRENCY": "ريال"
+  },
+  "CAR_CARD": {
+    "OPTIONS": {
+      "INSURANCE": "تأمين قابل للخصم",
+      "KM": "كم مجاني",
+      "FREE_CANCELLATION": "إلغاء مجاني"
+    }
+  },
+  "DATE_PICKER": {
+    "SELECT_DATE": "اختر التاريخ",
+    "SELECT_TIME": "اختر الوقت",
+    "SELECT_DATE_TIME": "اختر التاريخ والوقت",
+    "SELECT_DATE_TIME_AM_PM": "اختر التاريخ والوقت (ص-م)"
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "ابدأ رحلتك",
+      "SUB_TITLE": "يرجى تسجيل الدخول بالبريد الإلكتروني وكلمة المرور.",
+      "BUTTON": "تسجيل الدخول",
+      "EMAIL_INPUT": {
+        "TITLE": "البريد الإلكتروني",
+        "PLACEHOLDER": "اكتب بريدك الإلكتروني"
+      },
+      "PASSWORD_INPUT": {
+        "TITLE": "كلمة المرور",
+        "PLACEHOLDER": "اكتب كلمة المرور"
+      },
+      "LANGUAGE": "English"
+    },
+    "SIGNUP": {
+      "JOIN": "انضم",
+      "CHAMPIFY": "Champify",
+      "TITLE": "أنشئ بطلك",
+      "SUBTITLE": "استثمر في الرياضيين واصنع الأبطال.",
+      "NAME_INPUT": {
+        "TITLE": "اسم المستخدم",
+        "PLACEHOLDER": "اكتب اسمك"
+      },
+      "EMAIL_INPUT": {
+        "TITLE": "البريد الإلكتروني",
+        "PLACEHOLDER": "اكتب بريدك الإلكتروني"
+      },
+      "BUTTON": "أنشئ حسابًا",
+      "OR": "أو سجل بواسطة",
+      "GOOGLE": "جوجل",
+      "APPLE": "ابل",
+      "ALREADY": "لديك حساب بالفعل؟",
+      "LOGIN": "تسجيل الدخول",
+      "ARE_YOU_ATHELETE": "هل أنت بطل رياضي؟",
+      "CLICK_HERE": "اضغط هنا"
+    },
+    "FORGOT": {
+      "TITLE": "هل نسيت كلمة المرور؟",
+      "SUBTITLE": "يرجى إضافة البريد الإلكتروني الذي لدينا من قبل.",
+      "SEND_CODE": "إرسال الكود"
+    },
+    "CODE_VERIFICATION": {
+      "TITLE": "التحقق من رقم الهاتف",
+      "SUBTITLE": "لقد أرسلنا رمز التحقق إلى رقم الهاتف",
+      "SEND_CODE": "إرسال الكود",
+      "RESEND_CODE": "إعادة إرسال الكود",
+      "VERIFY": "تحقق الآن"
+    },
+    "NEW_PASSWORD": {
+      "TITLE": "تعيين كلمة مرور جديدة",
+      "SUBTITLE": "قم بتعيين كلمة المرور الآن.",
+      "PASSWORD": "كلمة المرور",
+      "CONFIRM_PASSWORD": "تأكيد كلمة المرور",
+      "PASSWORD_PLACEHOLDER": "اكتب كلمة المرور الخاصة بك",
+      "CONFIRM_PASSWORD_PLACEHOLDER": "تأكيد كلمة المرور الخاصة بك",
+      "RESET_NOW": "إعادة التعيين الآن"
+    },
+    "FQA": "الأسئلة الشائعة",
+    "TERMS_AND_CONDITIONS": "الشروط والأحكام",
+    "HELP_CENTER": "مركز المساعدة",
+    "BACK": "العودة",
+    "SUCCESS": {
+      "AMAZING": "رائع",
+      "TITLE": "تم إعادة تعيين كلمة المرور الخاصة بك.",
+      "EXPLORE": "استكشاف الآن"
+    },
+    "PREFERENCES": {
+      "TITLE": "الخطوة الأخيرة لإكمال طلبك",
+      "SUBTITLE": "يرجى ملء هذه البيانات لإكمال طلبك",
+      "CHECKOUT": "الدفع"
+    },
+    "DRIVER_DETAILS": {
+      "TITLE": "الخطوة الأخيرة لإكمال طلبك",
+      "SUB_TITLE": "يرجى ملء هذه البيانات لإكمال طلبك",
+      "FULL_NAME": {
+        "LABEL": "الاسم الكامل",
+        "PLACEHOLDER": "أدخل اسمك الكامل"
+      },
+      "PHONE": {
+        "LABEL": "رقم الهاتف",
+        "PLACEHOLDER": "أدخل رقم هاتفك"
+      },
+      "NATIONAL_ID": {
+        "LABEL": "رقم الهوية الوطنية",
+        "PLACEHOLDER": "أدخل رقم هويتك الوطنية"
+      },
+      "DRIVER_LICENSE": {
+        "LABEL": "رفع رخصة القيادة",
+        "PLACEHOLDER": "لم يتم اختيار ملف",
+        "BUTTON_TEXT": "تصفح",
+        "DRAG_TEXT": "اسحب وأفلت هنا أو ",
+        "BROWSE_LINK": "تصفح الجهاز",
+        "CHANGE_BUTTON": "تغيير",
+        "VIEW_BUTTON": "عرض"
+      },
+      "CHECKOUT": "الدفع",
+      "PROCESSING": "جارٍ المعالجة..."
+    }
+  },
+  "HOME": {
+    "SEARCH": {
+      "DAILY": {
+        "TITLE": "يومي",
+        "DROPDOWN": {
+          "PICKUP": "الاستلام",
+          "DELIVERY": "التوصيل",
+          "LABEL": "اختر نوع الخدمة",
+          "PLACEHOLDER": "الاستلام أو التوصيل"
+        }
+      },
+      "MONTHLY": {
+        "TITLE": "شهري",
+        "INPUT": {
+          "LABEL": "فترة الاستئجار",
+          "PLACEHOLDER": "عدد الشهور"
+        }
+      },
+      "YEARLY": {
+        "TITLE": "سنوي"
+      },
+      "AIRPORT": {
+        "TITLE": "مطار",
+        "DROPDOWN": {
+          "LABEL": "مطار",
+          "PLACEHOLDER": "اختر مطار الاستلام",
+          "AIRPORT1": "مطار 1",
+          "AIRPORT2": "مطار 2"
+        }
+      }
+    },
+    "HERO_SECTION": {
+      "INVEST": "استثمر",
+      "IN_ATHELETES": " في الرياضيين،",
+      "TITLE": "مكّنهم من إطلاق إمكاناتهم ومشاركة نجاحهم",
+      "SUB_TITLE": "من خلال الدعم المالي للرياضيين لمواصلة مسيرتهم الرياضية والفوز بالبطولات.",
+      "VIEW_VIDEO": "مشاهدة الفيديو",
+      "SPORTS_BY": "الرياضات بواسطة",
+      "CHAMPIFY": "Champify",
+      "TENNIS": "التنس",
+      "BASKETBALL": "كرة السلة"
+    },
+    "HOW_IT_WORKS": {
+      "STEP": "عملية خطوة بخطوة",
+      "HOW": "كيف تعمل",
+      "BELIEVE": "صدق",
+      "INVEST": "استثمر",
+      "ENJOY": "استمتع",
+      "SELECT": "اختر بطلك من بين",
+      "ATHLETES": "الرياضيين",
+      "SELECT_SUB": "من خلال الدعم المالي للرياضيين لمواصلة مسيرتهم الرياضية.",
+      "START": "ابدأ",
+      "KEEP": "واستمر في مراقبة",
+      "START_SUB": "من خلال الدعم المالي للرياضيين لمواصلة مسيرتهم الرياضية.",
+      "GAIN": "حقق أرباحًا كبيرة",
+      "BENEFITS": "منافع",
+      "AFTER": "بعد نجاح البطل",
+      "GAIN_SUB": "من خلال الدعم المالي للرياضيين لمواصلة مسيرتهم الرياضية."
+    },
+    "BOTTOM_PART": {
+      "START_INVEST": "ابدأ الاستثمار",
+      "NEW_WORLD": "ابدأ عالمًا جديدًا",
+      "START_CHAMPIFY": "ابدأ Champify"
+    },
+    "EXPLORE_SECTION": {
+      "TITLE": "السيارات",
+      "CARS": "الأكثر بحثًا",
+      "ALL_CARS": "كل السيارات",
+      "SEDAN": "سيدان",
+      "HATCHBACK": "هاتشباك",
+      "CONVERTIBLE": "كونفيرتيبل",
+      "COUPE": "كوبي",
+      "MINIVAN": "مينيفان"
+    },
+    "ATHLETE_CARD": {
+      "RANK": "ترتيب ATP",
+      "PLAYER_LEAGUE": "تصنيف اللاعب",
+      "CATEGORY": "الفئة"
+    },
+    "CLUBS_SECTION": {
+      "INVEST_IN": "استثمر في",
+      "CLUBS": "النوادي",
+      "SUBTITLE": "من خلال الدعم المالي للرياضيين لمواصلة مسيرتهم الرياضية."
+    },
+    "NFT_SECTION": {
+      "TITLE": "استثمر في الرياضيين بواسطة",
+      "NFTS": "NFT's",
+      "SUBTITLE": "من خلال الدعم المالي للرياضيين لمواصلة مسيرتهم الرياضية."
+    },
+    "FAQ": {
+      "TITLE": "الأسئلة",
+      "QUESTIONS": "الشائعة",
+      "WHAT_IS_CHAMPIFY": {
+        "TITLE": "ما هو Champify؟",
+        "CONTENT": "Champify هو المنصة الرائدة لدعم الرياضيين المباشر والاستثمارات. يبيع الرياضيون حقوق الملكية في أجورهم للمستثمرين. يتمكن المتابعون من الفرصة الفريدة للتواصل مع رياضييهم المفضلين، والتفاعل معهم والمشاركة في نجاحهم المالي."
+      },
+      "HOW_IT_WORKS": {
+        "TITLE": "كيف تعمل؟",
+        "CONTENT": "تفاصيل عن كيفية عمل Champify..."
+      },
+      "WALLETS": {
+        "TITLE": "ما هي المحادثات التي يمكنني استخدامها وهل أحتاج إلى واحدة؟",
+        "CONTENT": "تفاصيل عن المحادثات..."
+      },
+      "PAYMENT": {
+        "TITLE": "كيف يمكنني الدفع؟",
+        "CONTENT": "تفاصيل عن طرق الدفع..."
+      }
+    }
+  },
+  "OUR_ATHLETES": {
+    "TITLE": "رياضيونا",
+    "FILTERS": {
+      "BREADCRUMB": {
+        "HOME": "الصفحة الرئيسية",
+        "OUR_ATHLETES": "رياضيونا"
+      },
+      "RESET": "إعادة تعيين",
+      "SPORTS": {
+        "TITLE": "بالرياضة",
+        "TENNIS": "التنس",
+        "SQUASH": "الطاولة",
+        "BOXING": "الملاكمة",
+        "BODY_BUILDING": "اللياقة البدنية",
+        "ATHLETICS": "الرياضات الرياضية"
+      },
+      "RANK": {
+        "TITLE": "ترتيب",
+        "BRONZE": "البرونزي",
+        "SILVER": "الفضي",
+        "GOLD": "الذهبي",
+        "DIAMOND": "الماسي"
+      },
+      "COUNTRY": {
+        "TITLE": "بالبلد",
+        "EGYPT": "مصر",
+        "SAUDI_ARABIA": "السعودية",
+        "SUDAN": "السودان",
+        "AMERICA": "الولايات المتحدة",
+        "ASIA": "آسيا"
+      },
+      "AGE": {
+        "TITLE": "العمر",
+        "16_18": "16-18",
+        "18_20": "18-20",
+        "20_25": "20-25",
+        "25_30": "25-30"
+      }
+    }
+  },
+  "ATHLETE_DETAILS": {
+    "PLAYER_LEAGUE": "دوري اللاعب",
+    "CARDS": {
+      "SPORT_AND_ACHIEVEMENT": {
+        "TITLE": "الرياضة والإنجازات",
+        "SPORT": "الرياضة",
+        "ACHIEVEMENT": "الإنجاز",
+        "ATP_ITF_RANKING": "تصنيف ATP/ITF",
+        "NATIONAL_RANKING": "تصنيف المملكة",
+        "PRIZE_MONEY": "المبالغ المكتسبة",
+        "NUMBER_OF_TITLES": "عدد البطولات",
+        "WINS": "الفوز",
+        "LOSSES": "الخسارة"
+      },
+      "GENERAL_INFO": {
+        "TITLE": "معلومات عامة",
+        "CLUB_NAME": "اسم النادي",
+        "AGE": "العمر",
+        "HEIGHT": "الطول",
+        "WEIGHT": "الوزن"
+      }
+    },
+    "SIGNATURE_ITEMS": {
+      "SIGNATURE": "عناصر",
+      "ITEMS": "التوقيع",
+      "SUBTITLE": "من خلال الدعم المالي للرياضيين لمواصلة مسيرتهم الرياضية.",
+      "BUY_NOW": "شراء الآن"
+    },
+    "SPONSORS": {
+      "SPONSORS": "المساهمين"
+    },
+    "SOCIAL_MEDIA_FOLLOWERS": {
+      "SOCIAL_MEDIA_FOLLOWERS": "المتابعين في الوسائل الاجتماعية"
+    },
+    "SOCIAL_MEDIA_FOLLOWERS_COUNT": {
+      "INSTAGRAM_FOLLOWERS": "متابعين في الانستقرام",
+      "TIKTOK_FOLLOWERS": "متابعين في تيكتوك",
+      "X_FOLLOWERS": "متابعين في التويتر"
+    }
+  },
+  "YOUR_ASSETS": {
+    "TITLE": "أصولك",
+    "GOOD_MORNING": "صباح الخير",
+    "OWNED_STOCKS": "أصول الرياضيين",
+    "OWNED_ITEMS": "أصول الرياضيين",
+    "OWNED_NFT": "أصول الرياضيين",
+    "COMING_SOON": "قريبا"
+  },
+  "PROFILE": {
+    "PLEASE_COMPLETE": "برجاء إكمال بياناتك.",
+    "PERSONAL_DATA": {
+      "TITLE": "البيانات الشخصية",
+      "SUB_TITLE": "البيانات الأساسية",
+      "PROFILE_PICTURE": "الصورة الشخصية",
+      "FULL_NAME": "الاسم الكامل",
+      "EMAIL": "البريد الإلكتروني",
+      "BIO": "السيرة الذاتية",
+      "SAVE": "حفظ",
+      "DRIVER_DETAILS": {
+        "TITLE": "بيانات السائق",
+        "EDIT_BUTTON": "تعديل",
+        "FULL_NAME": "الاسم الكامل",
+        "NATIONAL_ID": "رقم الهوية الوطنية",
+        "PHONE_NUMBER": "رقم الهاتف",
+        "DRIVE_LICENSE": "رخصة القيادة",
+        "SAVE_CHANGES": "حفظ التغييرات",
+        "SAVING": "جارٍ الحفظ...",
+        "NO_LICENSE_IMAGE": "لم يتم رفع صورة الرخصة",
+        "VIEW_BUTTON": "عرض",
+        "CHANGE_BUTTON": "تغيير",
+        "UPLOAD_LICENSE": "رفع الرخصة"
+      },
+      "YOUR_CARD": {
+        "TITLE": "بطاقتك",
+        "USE_AS_DEFAULT": "استخدام كافتراضي",
+        "ADD_CARD": "إضافة بطاقة"
+      },
+      "MESSAGES": {
+        "PROFILE_UPDATED_SUCCESS": "تم تحديث الملف الشخصي بنجاح!",
+        "PROFILE_UPDATE_ERROR": "فشل في تحديث الملف الشخصي. يرجى المحاولة مرة أخرى.",
+        "NO_LICENSE_AVAILABLE": "لا توجد صورة رخصة متاحة",
+        "LICENSE_UPLOAD_COMING": "سيتم تطبيق وظيفة رفع الرخصة قريباً",
+        "NO_CUSTOMER_ID": "لم يتم العثور على معرف العميل في التخزين المحلي"
+      }
+    },
+    "DOUCMENTION_VERIFIED": {
+      "TITLE": "الملفات الموثقة",
+      "SUB_TITLE": "الوثائق الأساسية",
+      "ID": "جواز السفر أو بطاقة الهوية",
+      "ENROLLMENT": "إثبات التسجيل في الاتحاد الرياضي.",
+      "TEAM_ENROLLMENT": "إثبات الترتيب الحالي أو تسجيل الفريق.",
+      "ACQUIRED": "إثبات الأوسمة المكتسبة (اختياري)"
+    },
+    "WALLET": {
+      "TITLE": "المحفظة",
+      "ADD_BALANCE": "إضافة رصيد",
+      "CASH_WITHDRAWAL": "سحب نقدي",
+      "TRANSACTIONS": "المعاملات",
+      "TOTAL_SPENT": "إجمالي الإنفاق",
+      "TOTAL_REVENUE": "إجمالي الإيرادات"
+    },
+    "CHANGE_PASSWORD": "تغيير كلمة المرور",
+    "LOGOUT": "تسجيل الخروج"
+  },
+  "WALLET": {
+    "BALANCE": "الرصيد",
+    "CURRENCY_SUFFIX": ".00 ريال",
+    "ADD_BALANCE": "إضافة رصيد",
+    "TRANSACTIONS": "المعاملات"
+  },
+  "CARS": {
+    "TITLE": "السيارات",
+    "ADD_CAR": "إضافة سيارة",
+    "NEW_CAR": "سيارة جديدة",
+    "EDIT_CAR": "تعديل السيارة",
+    "FILTER_BRAND_PLACEHOLDER": "البحث بالماركة",
+    "CAR_INFO": "معلومات السيارة",
+    "LICENSE_INFO": "معلومات الترخيص",
+    "ADDITIONAL_INFO": "معلومات إضافية",
+    "OFFICE_INFO": "معلومات المكتب",
+    "BRAND": "الماركة",
+    "MODEL": "الموديل",
+    "YEAR": "السنة",
+    "PRICE_PER_DAY": "السعر لليوم",
+    "KM_LIMIT": "حد الكيلومترات",
+    "KM": "كم",
+    "OFFICE": "المكتب",
+    "PLATE_NUMBER": "رقم اللوحة",
+    "LICENSE_EXPIRY": "تاريخ انتهاء الترخيص",
+    "LICENSE_NUMBER": "رقم الترخيص",
+    "INSURANCE_TYPE": "نوع التأمين",
+    "DELIVERY_OPTION": "خيار التوصيل",
+    "FREE_CANCELLATION": "إلغاء مجاني",
+    "IMAGE": "صورة السيارة",
+    "DRAG_DROP_IMAGE": "اسحب وأفلت صورة السيارة هنا",
+    "IMAGE_REQUIREMENTS": "PNG، JPG حتى 5 ميجابايت",
+    "BROWSE_IMAGE": "تصفح الصور",
+    "DRAG_DROP_LICENSE": "اسحب وأفلت وثيقة الترخيص هنا",
+    "LICENSE_REQUIREMENTS": "PDF، DOC حتى 5 ميجابايت",
+    "BROWSE_FILES": "تصفح الملفات"
+  },
+  "VALIDATION": {
+    "REQUIRED": "هذا الحقل مطلوب",
+    "PHONE_PATTERN": "يجب أن يكون رقم الهاتف 11 رقماً ويبدأ بـ 011 أو 012 أو 010 أو 015",
+    "EMAIL_PATTERN": "يرجى إدخال بريد إلكتروني صالح",
+    "PASSWORD_HAS_NUMBER": "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل",
+    "PASSWORD_SPECIAL_CHAR": "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل مثل: #، $، %، *",
+    "PASSWORD_UPPERCASE": "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل",
+    "PASSWORD_LOWERCASE": "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل",
+    "MAX": "القيمة الحالية {{actual}} والحد الأقصى {{max}}",
+    "MIN": "الحد الأدنى هو {{min}}",
+    "MIN_LENGTH": "الحد الأدنى لطول كلمة المرور 8 أحرف",
+    "MAX_LENGTH": "الحد الأقصى للطول {{requiredLength}} حرفًا",
+    "REQUIRED_ONE": "يجب اختيار إما في الموقع أو عبر الإنترنت",
+    "NOT_UNIQUE": "تم استخدام هذه القيمة من قبل",
+    "METRIC_NAME_NOT_UNIQUE": "لا يمكنك إضافة مقاييس أداء بنفس الاسم",
+    "TOTAL_WEIGHT_EXCEEDED": "يجب ألا يتجاوز وزن مقاييس الأداء 100",
+    "MIN_AGE": "العمر يجب ألا يقل عن 10 سنوات",
+    "PASSWORDS_MISMATCH": "كلمتا المرور غير متطابقتين"
+  }
+}

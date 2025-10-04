@@ -1,0 +1,24 @@
+<div class="cars-page">
+  <div class="title-row">
+    <h2 class="page-title">{{ "CARS.TITLE" | translate }}</h2>
+    <button class="create-btn" (click)="onCreate()">{{ "CARS.ADD_CAR" | translate }}</button>
+  </div>
+  <div class="wrapper bg-white p-6 rounded-lg">
+    <div class="filters">
+      <app-general-input
+        [placeholder]="'CARS.FILTER_BRAND_PLACEHOLDER'"
+        (valueChange)="onBrandFilter($event)"
+      ></app-general-input>
+    </div>
+    <app-shared-table
+      [data]="data"
+      [displayedColumns]="displayedColumns"
+      [havePagination]="true"
+      [title]="'Cars'"
+      [hasClickEvent]="true"
+      [loading]="loading"
+      (itemClicked)="onRowClick($event)"
+      (pageChanged)="onPageChanged($event)"
+    ></app-shared-table>
+  </div>
+</div>

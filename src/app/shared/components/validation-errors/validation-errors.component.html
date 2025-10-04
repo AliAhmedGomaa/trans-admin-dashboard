@@ -1,0 +1,110 @@
+<section class="errors" *ngIf="!mismatchError">
+  <div *ngIf="isSubmitted && errors" class="error">
+    <img src="assets/images/auth/icons/error.svg" />
+
+    <div class="error" *ngIf="errors['required']">
+      <p class="errors__error__text">{{ "VALIDATION.REQUIRED" | translate }}</p>
+    </div>
+    <div class="error" *ngIf="errors['pattern'] && type === 'tel'">
+      <p class="errors__error__text">
+        {{ "VALIDATION.PHONE_PATTERN" | translate }}
+      </p>
+    </div>
+    <div class="error" *ngIf="errors['pattern']">
+      <p class="errors__error__text">
+        {{ "VALIDATION.EMAIL_PATTERN" | translate }}
+      </p>
+    </div>
+    <div class="error" *ngIf="errors['hasNumber']">
+      <p class="errors__error__text">
+        {{ "VALIDATION.PASSWORD_HAS_NUMBER" | translate }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['specialCharacter']">
+      <p class="errors__error__text">
+        {{ "VALIDATION.PASSWORD_SPECIAL_CHAR" | translate }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['upperCase']">
+      <p class="errors__error__text">
+        {{ "VALIDATION.PASSWORD_UPPERCASE" | translate }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['max']">
+      <p class="errors__error__text">
+        {{
+          "VALIDATION.MAX"
+            | translate
+              : { actual: errors["max"].actual, max: errors["max"].max }
+        }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['min']">
+      <p class="errors__error__text">
+        {{ "VALIDATION.MIN" | translate : { min: errors["min"].min } }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['minLength']">
+      <p class="errors__error__text">
+        {{ "VALIDATION.MIN_LENGTH" | translate }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['maxlength']">
+      <p class="errors__error__text">
+        {{
+          "VALIDATION.MAX_LENGTH"
+            | translate : { requiredLength: errors["maxlength"].requiredLength }
+        }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['lowerCase']">
+      <p class="errors__error__text">
+        {{ "VALIDATION.PASSWORD_LOWERCASE" | translate }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['requiredOne']">
+      <p class="errors__error__text">
+        {{ "VALIDATION.REQUIRED_ONE" | translate }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['isNotUnique']">
+      <p class="errors__error__text">
+        {{ "VALIDATION.NOT_UNIQUE" | translate }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['matricNameNotUnique']">
+      <p class="errors__error__text">
+        {{ "VALIDATION.METRIC_NAME_NOT_UNIQUE" | translate }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['totalWeightExceeded']">
+      <p class="errors__error__text">
+        {{ "VALIDATION.TOTAL_WEIGHT_EXCEEDED" | translate }}
+      </p>
+    </div>
+
+    <div class="error" *ngIf="errors['minAge']">
+      <p class="errors__error__text">{{ "VALIDATION.MIN_AGE" | translate }}</p>
+    </div>
+  </div>
+</section>
+
+<section *ngIf="mismatchError" class="input-container__errors">
+  <div class="flex items-center input-container__errors__error">
+    <img src="images/auth/icons/error.svg" />
+    <p class="text-red errors__error__text">
+      {{ "VALIDATION.PASSWORDS_MISMATCH" | translate }}
+    </p>
+  </div>
+</section>

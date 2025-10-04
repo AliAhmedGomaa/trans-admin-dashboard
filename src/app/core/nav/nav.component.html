@@ -3,7 +3,9 @@
     <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
-    <span class="app-title">Bookings Dashboard</span>
+    <span class="app-title">
+      <img src="assets/logos/logo.svg" alt="logo" class="logo">
+    </span>
     <span class="spacer"></span>
     <button mat-button (click)="toggleLanguage()">
       <mat-icon>translate</mat-icon>
@@ -31,8 +33,8 @@
             <ng-template #hasChildren>
               <button class="nav-link" type="button" (click)="toggleGroup(item)">
                 <mat-icon class="nav-icon" *ngIf="item.icon">{{ item.icon }}</mat-icon>
-                <span class="nav-text">{{ item.name }}</span>
                 <mat-icon class="chevron">{{ isExpanded(item) ? 'expand_less' : 'expand_more' }}</mat-icon>
+                <span class="nav-text">{{ item.name }}</span>
               </button>
               <ul class="sub-list" *ngIf="isExpanded(item)">
                 <li class="sub-item" *ngFor="let child of item.children; trackBy: identity">

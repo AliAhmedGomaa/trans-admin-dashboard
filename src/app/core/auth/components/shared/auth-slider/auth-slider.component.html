@@ -1,0 +1,9 @@
+<owl-carousel-o [options]="owlOptions" class="myCarousel">
+  <ng-container *ngFor="let slide of slides">
+    <ng-template carouselSlide>
+      <div class="slide-container">
+        <img class="slide-image" [src]="slide.gif" alt="GIF slide" />
+      </div>
+    </ng-template>
+  </ng-container>
+</owl-carousel-o>

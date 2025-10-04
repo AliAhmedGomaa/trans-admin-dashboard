@@ -1,15 +1,69 @@
 .bookings-page {
   padding: 16px;
+  max-height: calc(100vh - 75px);
+  min-height: calc(100vh - 120px);
+  // overflow: hidden;
 }
 
 .page-title {
   font-weight: 600;
   margin: 8px 0 16px;
+  color: #1d1f1f;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 160%;
 }
+
+.title-row { display: flex; align-items: center; justify-content: space-between; }
+.export-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #1d1f1f; color: #fff; border: none; border-radius: 24px; padding: 8px 16px;
+}
+.export-btn:disabled { opacity: 0.6; }
 
 .table-card {
   border-radius: 16px;
   overflow: hidden;
+  padding: 16px;
+  background: #fff;
+  min-height: calc(100vh - 180px);
 }
 
+.filters {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.filters .input {
+  display: flex;
+  flex-direction: column;
+}
+.filters .input input {
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #dfe3e8;
+  padding: 0 12px;
+}
 
+/* Status pill styles for projected template inside table */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.status-pill.pending {
+  color: #485fd0;
+  background: #ebedfa;
+}
+.status-pill.confirmed {
+  color: #00af6c;
+  background: #e5faf2;
+}
+.status-pill.cancelled {
+  color: #f55157;
+  background: #fde4e4;
+}

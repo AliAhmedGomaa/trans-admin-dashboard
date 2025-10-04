@@ -11,15 +11,21 @@
       [matColumnDef]="item.key"
     >
       <ng-template #defaultHeaderTemplate let-element>
-        {{ item.displayName }}
+        {{ item.displayName | translate }}
       </ng-template>
 
       <ng-template #defaultCellTemplate let-element>
-        <div class="table-header" [ngClass]="{
-          'status-pill pending': item.key === 'status' && element[item.key] === 'Pending',
-          'status-pill confirmed': item.key === 'status' && element[item.key] === 'Confirmed',
-          'status-pill cancelled': item.key === 'status' && element[item.key] === 'Cancelled'
-        }">
+        <div
+          class="table-header"
+          [ngClass]="{
+            'status-pill pending':
+              item.key === 'status' && element[item.key] === 'Pending',
+            'status-pill confirmed':
+              item.key === 'status' && element[item.key] === 'Confirmed',
+            'status-pill cancelled':
+              item.key === 'status' && element[item.key] === 'Cancelled'
+          }"
+        >
           {{ element[item?.key] }}
         </div>
       </ng-template>
@@ -45,32 +51,66 @@
       </mat-cell>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="columns" class="figma-header-row"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columns" class="figma-row"></mat-row>
+    <mat-header-row
+      *matHeaderRowDef="columns"
+      class="figma-header-row"
+    ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columns" class="figma-row" (click)="hasClickEvent && itemClicked.emit(row)"></mat-row>
   </mat-table>
 </div>
 
-<mat-paginator
-  [pageSize]="paginationData.limit"
-  [pageIndex]="paginationData.page"
-  [length]="paginationData.total"
-  (page)="pageChanged.emit($event.pageIndex)"
-  showFirstLastButtons
-  aria-label="Select page"
->
-</mat-paginator>
+<div class="custom-paginator" [dir]="'rtl'">
+  <div class="range" *ngIf="paginationData.total as total">
+    <span class="muted">{{ 'PAGINATION.FROM' | translate }} {{ rangeStart }}</span>
+    <span class="muted">{{ 'PAGINATION.TO' | translate }} {{ rangeEnd }}</span>
+    <span class="muted">{{ 'PAGINATION.OF' | translate }}</span>
+    <span class="strong">{{ total }}</span>
+    <span class="muted">{{ 'PAGINATION.RESULTS' | translate }}</span>
+  </div>
+  <div class="page-size">
+    <span class="label">{{ 'PAGINATION.SHOW' | translate }}</span>
+    <select
+      [value]="paginationData.limit"
+      (change)="onPageSizeChange($any($event.target).value)"
+    >
+      <option [value]="10">10</option>
+      <option [value]="15">15</option>
+      <option [value]="25">25</option>
+      <option [value]="50">50</option>
+    </select>
+  </div>
+
+  <button
+    class="pill primary"
+    (click)="prevPage()"
+    [disabled]="currentPage1Based <= 1 || totalPages <= 1"
+  >
+    <span class="chev">❮</span> {{ 'PAGINATION.PREV' | translate }}
+  </button>
+
+  <ng-container *ngFor="let p of pages">
+    <button
+      *ngIf="p !== '…'"
+      (click)="goToPage(+p)"
+      [class.active]="+p === currentPage1Based"
+      class="pill"
+    >
+      {{ p }}
+    </button>
+    <span *ngIf="p === '…'" class="dots">…</span>
+  </ng-container>
+
+  <button
+    class="pill primary"
+    (click)="nextPage()"
+    [disabled]="currentPage1Based >= totalPages || totalPages <= 1"
+  >
+    {{ 'PAGINATION.NEXT' | translate }} <span class="chev">❯</span>
+  </button>
+</div>
 
 <ng-template #loadingTpl>
-  <div class="loading-container">
+  <div class="loading-container h-full">
     <mat-spinner diameter="48"></mat-spinner>
   </div>
-  <mat-paginator
-    [pageSize]="paginationData.limit"
-    [pageIndex]="paginationData.page"
-    [length]="paginationData.total"
-    (page)="pageChanged.emit($event.pageIndex)"
-    showFirstLastButtons
-    aria-label="Select page"
-  >
-  </mat-paginator>
 </ng-template>

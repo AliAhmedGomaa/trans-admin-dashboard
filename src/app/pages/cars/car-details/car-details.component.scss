@@ -1,0 +1,95 @@
+.car-details {
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 24px;
+  color: #1d1f1f;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  border-radius: 16px;
+  padding: 8px 16px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #420098;
+  color: #e9ebee;
+}
+
+.btn-danger-outline {
+  background: #fde4e4;
+  color: #f55157;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 0 0 0 6px #f5f7f7 inset;
+}
+
+.card-title {
+  color: #666d80;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  color: #8a8f98;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.value {
+  color: #1d1f1f;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.car-image {
+  max-width: 400px;
+  max-height: 300px;
+  border-radius: 12px;
+  object-fit: cover;
+}

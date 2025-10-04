@@ -1,0 +1,18 @@
+<section class="wrapper">
+  <img class="logo mb-auto" src="assets/images/logos/logo.svg" />
+  <div class="content mb-auto max-w-[70%]">
+    <img class="mx-auto" src="gifs/auth/success.gif" />
+    <h3 class="title text-center">
+      <span class="green" *ngIf="haveAmazing">{{ 'AUTH.SUCCESS.AMAZING' | translate }}</span
+      >{{ title }}
+    </h3>
+    <p class="text-center">{{ subTitle }}</p>
+
+    <div class="mt-3">
+      <app-general-button
+        route="/"
+        title="{{ 'AUTH.SUCCESS.EXPLORE' | translate }}"
+      ></app-general-button>
+    </div>
+  </div>
+</section>

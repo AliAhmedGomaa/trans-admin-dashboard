@@ -8,8 +8,8 @@ html,
 body {
   height: 100%;
 }
-body {
+body, html, * {
   margin: 0;
-  font-family: "IBM Plex Sans Arabic", "Expo Arabic", Roboto, "Helvetica Neue",
-    sans-serif;
+  font-family: "Tajawal", "IBM Plex Sans Arabic", "Expo Arabic", Roboto, "Helvetica Neue", sans-serif;
 }
+

@@ -1,0 +1,82 @@
+<div class="car-details" *ngIf="!loading; else loadingTpl">
+  <div class="header">
+    <div class="title">{{ car?.brand }} {{ car?.carModel }}</div>
+    <div class="actions">
+      <button class="btn btn-primary" (click)="onEdit()">{{ "COMMON.EDIT" | translate }}</button>
+      <button class="btn btn-danger-outline" (click)="onDelete()">{{ "COMMON.DELETE" | translate }}</button>
+    </div>
+  </div>
+
+  <div class="sections">
+    <div class="card">
+      <div class="card-title">{{ "CARS.CAR_INFO" | translate }}</div>
+      <div class="row">
+        <div class="item">
+          <div class="label">{{ "CARS.BRAND" | translate }}</div>
+          <div class="value">{{ car?.brand }}</div>
+        </div>
+        <div class="item">
+          <div class="label">{{ "CARS.MODEL" | translate }}</div>
+          <div class="value">{{ car?.carModel }}</div>
+        </div>
+        <div class="item">
+          <div class="label">{{ "CARS.YEAR" | translate }}</div>
+          <div class="value">{{ car?.year }}</div>
+        </div>
+        <div class="item">
+          <div class="label">{{ "CARS.PRICE_PER_DAY" | translate }}</div>
+          <div class="value">{{ car?.pricePerDay }} {{ "COMMON.CURRENCY" | translate }}</div>
+        </div>
+        <div class="item">
+          <div class="label">{{ "CARS.KM_LIMIT" | translate }}</div>
+          <div class="value">{{ car?.kmLimit }} {{ "CARS.KM" | translate }}</div>
+        </div>
+        <div class="item">
+          <div class="label">{{ "CARS.INSURANCE_TYPE" | translate }}</div>
+          <div class="value">{{ car?.insuranceType }}</div>
+        </div>
+        <div class="item">
+          <div class="label">{{ "CARS.DELIVERY_OPTION" | translate }}</div>
+          <div class="value">{{ (car?.deliveryOption ? "COMMON.YES" : "COMMON.NO") | translate }}</div>
+        </div>
+        <div class="item">
+          <div class="label">{{ "CARS.FREE_CANCELLATION" | translate }}</div>
+          <div class="value">{{ (car?.freeCancellation ? "COMMON.YES" : "COMMON.NO") | translate }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" *ngIf="car?.office">
+      <div class="card-title">{{ "CARS.OFFICE_INFO" | translate }}</div>
+      <div class="row">
+        <div class="item">
+          <div class="label">{{ "OFFICES.NAME" | translate }}</div>
+          <div class="value">{{ car?.office?.name }}</div>
+        </div>
+        <div class="item">
+          <div class="label">{{ "OFFICES.PHONE" | translate }}</div>
+          <div class="value">{{ car?.office?.phone }}</div>
+        </div>
+        <div class="item">
+          <div class="label">{{ "OFFICES.CITY" | translate }}</div>
+          <div class="value">{{ car?.office?.city }}</div>
+        </div>
+        <div class="item">
+          <div class="label">{{ "OFFICES.RATING" | translate }}</div>
+          <div class="value">{{ car?.office?.rating }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" *ngIf="car?.image">
+      <div class="card-title">{{ "CARS.IMAGE" | translate }}</div>
+      <div class="image-container">
+        <img [src]="car?.image" [alt]="car?.brand + ' ' + car?.carModel" class="car-image" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingTpl>
+  <div class="car-details">{{ "COMMON.LOADING" | translate }}...</div>
+</ng-template>

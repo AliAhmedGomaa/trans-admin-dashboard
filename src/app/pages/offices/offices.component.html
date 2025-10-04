@@ -1,0 +1,24 @@
+<div class="offices-page">
+  <div class="title-row">
+    <h2 class="page-title">{{ "OFFICES.TITLE" | translate }}</h2>
+    <button class="create-btn" (click)="onCreate()">اضافة مكتب</button>
+  </div>
+  <div class="wrapper bg-white p-6 rounded-lg">
+    <div class="filters">
+      <app-general-input
+        [placeholder]="'OFFICES.FILTER_NAME_PLACEHOLDER'"
+        (valueChange)="onNameFilter($event)"
+      ></app-general-input>
+    </div>
+    <app-shared-table
+      [data]="data"
+      [displayedColumns]="displayedColumns"
+      [havePagination]="true"
+      [title]="'Offices'"
+      [hasClickEvent]="true"
+      [loading]="loading"
+      (itemClicked)="onRowClick($event)"
+      (pageChanged)="onPageChanged($event)"
+    ></app-shared-table>
+  </div>
+</div>

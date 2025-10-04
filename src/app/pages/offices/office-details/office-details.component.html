@@ -1,0 +1,85 @@
+<div class="office-details" *ngIf="!loading; else loadingTpl">
+  <div class="header">
+    <div class="title">{{ office?.name }}</div>
+    <div class="actions">
+      <button class="btn btn-primary" (click)="onEdit()">تعديل</button>
+      <button class="btn btn-danger-outline" (click)="onDelete()">حذف</button>
+    </div>
+  </div>
+
+  <div class="sections">
+    <div class="card">
+      <div class="card-title">تفاصيل المكتب</div>
+      <div class="row">
+        <div class="item">
+          <div class="label">الاسم</div>
+          <div class="value">{{ office?.name }}</div>
+        </div>
+        <div class="item">
+          <div class="label">اسم  المكتب بالانحليزية</div>
+          <div class="value">{{ office?.englishName || '—' }}</div>
+        </div>
+
+        <div class="item">
+          <div class="label">رقم الهاتف</div>
+          <div class="value">{{ office?.phone }}</div>
+        </div>
+        <div class="item">
+          <div class="label">رقم المكتب</div>
+          <div class="value">{{ office?.officeNumber || '—' }}</div>
+        </div>
+
+        <div class="item">
+          <div class="label">المدينة</div>
+          <div class="value">{{ office?.city }}</div>
+        </div>
+        <div class="item">
+          <div class="label">عنوان الفرع</div>
+          <div class="value">{{ office?.address || '—' }}</div>
+        </div>
+
+        <div class="item">
+          <div class="label">الدولة</div>
+          <div class="value">{{ office?.country || '—' }}</div>
+        </div>
+        <div class="item">
+          <div class="label">الرقم التجارى</div>
+          <div class="value">{{ office?.commercialRegisterNumber || '—' }}</div>
+        </div>
+
+        <div class="item full">
+          <div class="label">ارفاق السجل التجارى</div>
+          <div class="value link">معاينة</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">معلومات البنك</div>
+      <div class="row">
+        <div class="item">
+          <div class="label">اسم الحساب</div>
+          <div class="value">{{ office?.bankingInfo?.accountName || '—' }}</div>
+        </div>
+        <div class="item">
+          <div class="label">اسم البنك</div>
+          <div class="value">{{ office?.bankingInfo?.bankName || '—' }}</div>
+        </div>
+        <div class="item">
+          <div class="label">رقم الحساب</div>
+          <div class="value">{{ office?.bankingInfo?.accountNumber || '—' }}</div>
+        </div>
+        <div class="item">
+          <div class="label">رقم الايبان (IBAN)</div>
+          <div class="value">{{ office?.bankingInfo?.ibanNumber || '—' }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingTpl>
+  <div class="office-details">Loading...</div>
+</ng-template>
+
+

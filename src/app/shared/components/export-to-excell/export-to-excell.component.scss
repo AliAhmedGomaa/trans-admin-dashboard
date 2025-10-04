@@ -1,0 +1,7 @@
+.export-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #1d1f1f; color: #fff; border: none; border-radius: 24px; padding: 8px 16px;
+}
+.export-btn:disabled { opacity: 0.6; }
+
+

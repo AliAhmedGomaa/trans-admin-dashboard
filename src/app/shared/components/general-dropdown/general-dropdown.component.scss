@@ -1,0 +1,60 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e4e5e7;
+  border-radius: 14px;
+  background: #fff;
+}
+
+label {
+  font-family: "IBM Plex Sans Arabic";
+  font-size: 12px;
+  font-weight: 500;
+}
+
+::ng-deep {
+  .mat-mdc-select {
+    display: flex;
+    height: 40px;
+  }
+
+  .mat-mdc-select-value {
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .mat-mdc-select-min-line {
+    padding-inline-start: 16px;
+  }
+
+  .placeholder-custom {
+    .mat-mdc-select-placeholder {
+      color: #7c8690;
+      font-family: var(--font2, "IBM Plex Sans Arabic") !important;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+    }
+  }
+
+  .mat-mdc-select-arrow {
+    border-left: 24px solid transparent !important;
+    border-right: none !important;
+    border-top: 24px solid transparent !important;
+    border-image-source: url("../../../../../public/icons/arrow-down.svg") !important;
+    border-image-repeat: stretch !important;
+    margin-inline-end: 16px;
+
+    svg {
+      display: none;
+    }
+  }
+}

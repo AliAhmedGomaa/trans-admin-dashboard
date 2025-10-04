@@ -1,0 +1,80 @@
+@import "../../../../../../public/scss/variables";
+
+.remember-me {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
+  color: $primary-grey-text;
+  a {
+    color: $primary-grey-text;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.56px;
+  }
+}
+
+.error-wrapper {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  .error {
+    width: 100%;
+    color: red;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+.signup {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  span {
+    color: #4a4a54;
+    font-size: 18px;
+  }
+  &__text {
+    color: $primary-green;
+    font-weight: 500;
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+}
+
+.or-part {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px;
+  .or-line {
+    background: #eee;
+    height: 1.5px;
+    width: 100%;
+  }
+  p {
+    white-space: nowrap;
+    color: #898989;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+.o-auth {
+  div {
+    border-radius: 12px;
+    border: 1px solid #e9e7e4;
+    background: #fff;
+  }
+}
+
+.new-user {
+  color: $primary-grey-text;
+  font-size: 14px;
+  font-weight: 500;
+  .create {
+    color: $primary-black;
+  }
+}

@@ -1,0 +1,505 @@
+{
+  "COMMON": {
+    "SEARCH": "Search",
+    "DOWNLOAD": "Download",
+    "CLOSE": "Close",
+    "CANCEL": "Cancel",
+    "LOGO": "Logo",
+    "EDIT": "Edit",
+    "DELETE": "Delete",
+    "ADD": "Add",
+    "LOADING": "Loading",
+    "YES": "Yes",
+    "NO": "No",
+    "CURRENCY": "SAR"
+  },
+  "PAGINATION": {
+    "NEXT": "Next",
+    "PREV": "Previous",
+    "SHOW": "Show",
+    "FROM": "From",
+    "TO": "to",
+    "OF": "of",
+    "RESULTS": "results"
+  },
+  "BOOKINGS": {
+    "TITLE": "Bookings",
+    "EXPORT": "Export report"
+  },
+  "TABLE": {
+    "BOOKING_NO": "Booking #",
+    "CUSTOMER": "Customer",
+    "PHONE": "Phone",
+    "CAR": "Car",
+    "START": "Start",
+    "END": "End",
+    "STATUS": "Status",
+    "TOTAL": "Total"
+  },
+  "OFFICES": {
+    "TITLE": "Offices",
+    "NAME": "Name",
+    "PHONE": "Phone",
+    "CITY": "City",
+    "RATING": "Rating",
+    "REG": "Commercial Reg. No.",
+    "FILTER_NAME_PLACEHOLDER": "Search by office name"
+  },
+  "FILTERS": {
+    "COMPANY": "Company",
+    "SELECT_COMPANY": "Select company",
+    "STATUS": "Status",
+    "SELECT_STATUS": "Select status",
+    "CLIENT_NAME": "Client name",
+    "CLIENT_NAME_PLACEHOLDER": "Type client name",
+    "ALL_COMPANIES": "All companies",
+    "COMPANY_SOLIMAN": "Soliman Cars",
+    "ALL_STATUS": "All",
+    "PENDING": "Pending",
+    "CONFIRMED": "Confirmed",
+    "CANCELLED": "Cancelled"
+  },
+  "CAR_CARD": {
+    "OPTIONS": {
+      "INSURANCE": "Deductible Insurance",
+      "KM": "Free KM",
+      "FREE_CANCELLATION": "Free Cancellation"
+    }
+  },
+  "DATE_PICKER": {
+    "SELECT_DATE": "Select Date",
+    "SELECT_TIME": "Select Time",
+    "SELECT_DATE_TIME": "Select Date & Time",
+    "SELECT_DATE_TIME_AM_PM": "Select Date and Time (AM/PM)"
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Start your journey",
+      "SUB_TITLE": "Please login with your email and password.",
+      "BUTTON": "Login",
+      "EMAIL_INPUT": {
+        "TITLE": "Email",
+        "PLACEHOLDER": "Type your email"
+      },
+      "PASSWORD_INPUT": {
+        "TITLE": "Password",
+        "PLACEHOLDER": "Type your password"
+      }
+    },
+    "SIGNUP": {
+      "JOIN": "Join",
+      "CHAMPIFY": "Champify",
+      "TITLE": "Create Your Hero",
+      "SUBTITLE": "INVEST IN ATHLETES AND MAKE HEROS.",
+      "NAME_INPUT": {
+        "TITLE": "User Name",
+        "PLACEHOLDER": "Type your name"
+      },
+      "EMAIL_INPUT": {
+        "TITLE": "Email",
+        "PLACEHOLDER": "Type your email"
+      },
+      "BUTTON": "Create an account",
+      "OR": "or Sign up with",
+      "GOOGLE": "Google",
+      "APPLE": "Apple ID",
+      "ALREADY": "Already have account? ",
+      "LOGIN": "Login",
+      "ARE_YOU_ATHELETE": "Are you a Athlete Hero ?",
+      "CLICK_HERE": "Click here"
+    },
+    "FORGOT": {
+      "TITLE": "Forgot your password ?",
+      "SUBTITLE": "Please add email address we have before.",
+      "SEND_CODE": "Send Code"
+    },
+    "CODE_VERIFICATION": {
+      "TITLE": "Verification your phone number",
+      "SUBTITLE": "We send SMS to your number",
+      "SEND_CODE": "Send Code",
+      "RESEND_CODE": "Resend Code In",
+      "VERIFY": "Verify now"
+    },
+    "NEW_PASSWORD": {
+      "TITLE": "Set a New Password",
+      "SUBTITLE": "Set your password now.",
+      "PASSWORD": "Password",
+      "CONFIRM_PASSWORD": "Confirm Password",
+      "PASSWORD_PLACEHOLDER": "Type your password",
+      "CONFIRM_PASSWORD_PLACEHOLDER": "Confirm your password",
+      "RESET_NOW": "Reset Now"
+    },
+    "FQA": "FQA",
+    "TERMS_AND_CONDITIONS": "Terms and conditions",
+    "HELP_CENTER": "Help Center",
+    "BACK": "Back",
+    "SUCCESS": {
+      "AMAZING": "Amazing",
+      "TITLE": " your Password has been Reset.",
+      "EXPLORE": "Explore Now"
+    },
+    "PREFERENCES": {
+      "TITLE": "Last step to complete your order",
+      "SUBTITLE": "Please fill those data to complete your order",
+      "CHECKOUT": "Checkout"
+    },
+    "DRIVER_DETAILS": {
+      "TITLE": "Last step to complete your order",
+      "SUB_TITLE": "Please fill those data to complete your order",
+      "FULL_NAME": {
+        "LABEL": "Full Name",
+        "PLACEHOLDER": "Enter your full name"
+      },
+      "PHONE": {
+        "LABEL": "Phone Number",
+        "PLACEHOLDER": "Enter your phone number"
+      },
+      "NATIONAL_ID": {
+        "LABEL": "National ID",
+        "PLACEHOLDER": "Enter your national ID"
+      },
+      "DRIVER_LICENSE": {
+        "LABEL": "Upload drive license",
+        "PLACEHOLDER": "No file chosen",
+        "BUTTON_TEXT": "Browse",
+        "DRAG_TEXT": "Drag and drop here or ",
+        "BROWSE_LINK": "browse device",
+        "CHANGE_BUTTON": "Change",
+        "VIEW_BUTTON": "View"
+      },
+      "CHECKOUT": "Checkout",
+      "PROCESSING": "Processing..."
+    }
+  },
+  "NAV": {
+    "HOME_PAGE": "Home Page",
+    "PROFILE": "My Profile",
+    "LOGOUT": "Logout",
+    "CARS": "Cars",
+    "CONTACT_US": "Contact Us",
+    "LOGIN": "Login",
+    "REGISTER": "Register"
+  },
+  "HOME": {
+    "SEARCH": {
+      "DAILY": {
+        "TITLE": "Daily",
+        "DROPDOWN": {
+          "PICKUP": "Pickup",
+          "DELIVERY": "Delivery",
+          "LABEL": "Choose Service Type",
+          "PLACEHOLDER": "Pickup Or Delivery"
+        }
+      },
+      "MONTHLY": {
+        "TITLE": "Monthly",
+        "INPUT": {
+          "LABEL": "Rental Period",
+          "PLACEHOLDER": "Number of months"
+        }
+      },
+      "YEARLY": {
+        "TITLE": "Yearly"
+      },
+      "AIRPORT": {
+        "TITLE": "Airport",
+        "DROPDOWN": {
+          "LABEL": "Airport",
+          "PLACEHOLDER": "Select Pickup Airport",
+          "AIRPORT1": "Airport 1",
+          "AIRPORT2": "Airport 2"
+        }
+      }
+    },
+    "HERO_SECTION": {
+      "INVEST": "Invest",
+      "IN_ATHELETES": " in athletes,",
+      "TITLE": "Empower them to unlock their potential And share their success",
+      "SUB_TITLE": "Through financial support for athletes to continue their sporting careers and win championships.",
+      "VIEW_VIDEO": "View Video",
+      "SPORTS_BY": "Sports By",
+      "CHAMPIFY": "Champify",
+      "TENNIS": "Tennis",
+      "BASKETBALL": "Basketball"
+    },
+    "HOW_IT_WORKS": {
+      "STEP": "Step by Step Process",
+      "HOW": "How it works",
+      "BELIEVE": "Believe",
+      "INVEST": "Invest",
+      "ENJOY": "Enjoy",
+      "SELECT": "Select your hero from our",
+      "ATHLETES": "athletes",
+      "SELECT_SUB": "Through financial support for athletes to continue their sporting careers.",
+      "START": "Start ",
+      "KEEP": " and keep your eyes",
+      "START_SUB": "Through financial support for athletes to continue their sporting careers.",
+      "GAIN": "Gain big ",
+      "BENEFITS": "benefits",
+      "AFTER": " after hero success",
+      "GAIN_SUB": "Through financial support for athletes to continue their sporting careers."
+    },
+    "BOTTOM_PART": {
+      "START_INVEST": "Start Invest",
+      "NEW_WORLD": "Start a New World",
+      "START_CHAMPIFY": "Start Champify"
+    },
+    "EXPLORE_SECTION": {
+      "TITLE": "The most searched",
+      "CARS": "Cars",
+      "ALL_CARS": "All Cars",
+      "SEDAN": "Sedan",
+      "HATCHBACK": "Hatchback",
+      "CONVERTIBLE": "Convertible"
+    },
+    "ATHLETE_CARD": {
+      "RANK": "ATP Rank",
+      "PLAYER_LEAGUE": "Player League",
+      "CATEGORY": "Category"
+    },
+    "CLUBS_SECTION": {
+      "INVEST_IN": "Invest in",
+      "CLUBS": "Clubs",
+      "SUBTITLE": "Through financial support for athletes to continue their sporting careers."
+    },
+    "NFT_SECTION": {
+      "TITLE": "Invest in athletes  by ",
+      "NFTS": "NFT's",
+      "SUBTITLE": "Through financial support for athletes to continue their sporting careers."
+    },
+    "FAQ": {
+      "TITLE": "Frequently Asked",
+      "QUESTIONS": "Questions",
+      "WHAT_IS_CHAMPIFY": {
+        "TITLE": "Where can I pick up my rental car?",
+        "CONTENT": "You can pick up your rental car from one of our conveniently located branches or have it delivered to your specified location."
+      },
+      "HOW_IT_WORKS": {
+        "TITLE": "What do I need to bring for car pickup?",
+        "CONTENT": "You can pick up your rental car from one of our conveniently located branches or have it delivered to your specified location."
+      },
+      "WALLETS": {
+        "TITLE": "What's the process for returning the car?",
+        "CONTENT": "You can pick up your rental car from one of our conveniently located branches or have it delivered to your specified location."
+      },
+      "PAYMENT": {
+        "TITLE": "Can I modify or cancel my reservation?",
+        "CONTENT": "You can pick up your rental car from one of our conveniently located branches or have it delivered to your specified location."
+      }
+    }
+  },
+  "CARS": {
+    "TITLE": "Cars",
+    "ADD_CAR": "Add Car",
+    "NEW_CAR": "New Car",
+    "EDIT_CAR": "Edit Car",
+    "FILTER_BRAND_PLACEHOLDER": "Search by brand",
+    "CAR_INFO": "Car Information",
+    "LICENSE_INFO": "License Information",
+    "ADDITIONAL_INFO": "Additional Information",
+    "OFFICE_INFO": "Office Information",
+    "BRAND": "Brand",
+    "MODEL": "Model",
+    "YEAR": "Year",
+    "PRICE_PER_DAY": "Price per Day",
+    "KM_LIMIT": "KM Limit",
+    "KM": "KM",
+    "OFFICE": "Office",
+    "PLATE_NUMBER": "Plate Number",
+    "LICENSE_EXPIRY": "License Expiry Date",
+    "LICENSE_NUMBER": "License Number",
+    "INSURANCE_TYPE": "Insurance Type",
+    "DELIVERY_OPTION": "Delivery Option",
+    "FREE_CANCELLATION": "Free Cancellation",
+    "IMAGE": "Car Image",
+    "DRAG_DROP_IMAGE": "Drag & drop car image here",
+    "IMAGE_REQUIREMENTS": "PNG, JPG up to 5MB",
+    "BROWSE_IMAGE": "Browse Image",
+    "DRAG_DROP_LICENSE": "Drag & drop license document here",
+    "LICENSE_REQUIREMENTS": "PDF, DOC up to 5MB",
+    "BROWSE_FILES": "Browse Files",
+    "FILTERS": {
+      "TITLE": "Filters",
+      "FILTER_RESULT": "Filter Results",
+      "RESET": "Reset",
+      "SPECIAL": {
+        "TITLE": "Special"
+      },
+      "CAR_TYPE": {
+        "TITLE": "Car Type",
+        "SEDAN": "Sedan",
+        "HATCHBACK": "Hatchback",
+        "CONVERTIBLE": "Convertible",
+        "SUV": "SUV"
+      },
+      "BRAND": {
+        "TITLE": "Brand",
+        "SEDAN": "Sedan",
+        "HATCHBACK": "Hatchback",
+        "CONVERTIBLE": "Convertible",
+        "SUV": "SUV",
+        "TOYOTA": "Toyota",
+        "BMW": "BMW",
+        "MERCEDES": "Mercedes",
+        "AUDI": "Audi",
+        "VOLKSWAGEN": "Volkswagen"
+      },
+      "PRICE": {
+        "TITLE": "Price",
+        "SEDAN": "Sedan",
+        "HATCHBACK": "Hatchback",
+        "CONVERTIBLE": "Convertible",
+        "SUV": "SUV",
+        "16_18": "16-18",
+        "18_20": "18-20",
+        "20_25": "20-25",
+        "25_30": "25-30",
+        "30_40": "30-40"
+      },
+      "OFFICE": {
+        "TITLE": "Office",
+        "SEDAN": "Sedan",
+        "HATCHBACK": "Hatchback",
+        "CONVERTIBLE": "Convertible"
+      }
+    }
+  },
+  "ATHLETE_DETAILS": {
+    "PLAYER_LEAGUE": "Player League",
+    "CARDS": {
+      "SPORT_AND_ACHIEVEMENT": {
+        "TITLE": "Sport and Achievement",
+        "SPORT": "Sport",
+        "ACHIEVEMENT": "Achievement",
+        "ATP_ITF_RANKING": "ATP/ITF Ranking",
+        "NATIONAL_RANKING": "National Ranking",
+        "PRIZE_MONEY": "Prize Money",
+        "NUMBER_OF_TITLES": "Number of Titles",
+        "WINS": "Wins",
+        "LOSSES": "Losses"
+      },
+      "GENERAL_INFO": {
+        "TITLE": "General Info",
+        "CLUB_NAME": "Club Name",
+        "AGE": "Age",
+        "HEIGHT": "Height",
+        "WEIGHT": "Weight"
+      }
+    },
+    "SIGNATURE_ITEMS": {
+      "SIGNATURE": "Signature",
+      "ITEMS": "Items",
+      "SUBTITLE": "Through financial support for athletes to continue their sporting careers.",
+      "BUY_NOW": "Buy Now"
+    },
+    "SPONSORS": {
+      "SPONSORS": "Sponsors"
+    },
+    "SOCIAL_MEDIA_FOLLOWERS": {
+      "SOCIAL_MEDIA_FOLLOWERS": "Social Media Followers"
+    },
+    "SOCIAL_MEDIA_FOLLOWERS_COUNT": {
+      "FOLLOWERS": "Followers"
+    }
+  },
+  "YOUR_ASSETS": {
+    "TITLE": "Your Assets",
+    "GOOD_MORNING": "Good Morning,",
+    "OWNED_STOCKS": "Owned Stocks",
+    "OWNED_ITEMS": "Owned Items",
+    "OWNED_NFT": "Owned NFTs",
+    "COMING_SOON": "Coming Soon"
+  },
+  "MARKET_PLACE": {
+    "TITLE": "Market Place",
+    "YOUR_SELLING": "Your Selling",
+    "GOOD_MORNING": "Good Morning,",
+    "SUBTITLE": "Through financial support for athletes to continue their sporting careers.",
+    "BUY_NOW": "Buy Now"
+  },
+  "PROFILE": {
+    "GOOD_MORNING": "Good Morning,",
+    "PLEASE_COMPLETE": "Please Complete your information.",
+    "MY_BOOKING": {
+      "TITLE": "My Booking",
+      "SUB_TITLE": "Basic Data",
+      "PROFILE_PICTURE": "Profile Picture",
+      "FULL_NAME": "Full Name",
+      "EMAIL": "Email",
+      "BIO": "Bio",
+      "SAVE": "Save"
+    },
+    "PERSONAL_DATA": {
+      "DRIVER_DETAILS": {
+        "TITLE": "Driver details",
+        "EDIT_BUTTON": "Edit",
+        "FULL_NAME": "Full Name",
+        "NATIONAL_ID": "National ID",
+        "PHONE_NUMBER": "Phone Number",
+        "DRIVE_LICENSE": "drive license",
+        "SAVE_CHANGES": "Save Changes",
+        "SAVING": "Saving...",
+        "NO_LICENSE_IMAGE": "No license image uploaded",
+        "VIEW_BUTTON": "View",
+        "CHANGE_BUTTON": "Change",
+        "UPLOAD_LICENSE": "Upload License"
+      },
+      "YOUR_CARD": {
+        "TITLE": "Your Card",
+        "USE_AS_DEFAULT": "Use as default",
+        "ADD_CARD": "Add card"
+      },
+      "MESSAGES": {
+        "PROFILE_UPDATED_SUCCESS": "Profile updated successfully!",
+        "PROFILE_UPDATE_ERROR": "Failed to update profile. Please try again.",
+        "NO_LICENSE_AVAILABLE": "No license image available",
+        "LICENSE_UPLOAD_COMING": "License upload functionality to be implemented",
+        "NO_CUSTOMER_ID": "No customer ID found in localStorage"
+      }
+    },
+    "WALLET": {
+      "TITLE": "Wallet",
+      "ADD_BALANCE": "Add Balance",
+      "CASH_WITHDRAWAL": "Cash Withdrawal",
+      "TRANSACTIONS": "Transactions",
+      "TOTAL_SPENT": "Total Spent",
+      "TOTAL_REVENUE": "Total Revenue"
+    },
+    "DATA": {
+      "TITLE": "Profile",
+      "SUB_TITLE": "Basic Data",
+      "PROFILE_PICTURE": "Profile Picture",
+      "FULL_NAME": "Full Name",
+      "EMAIL": "Email",
+      "BIO": "Bio",
+      "SAVE": "Save"
+    },
+    "LOGOUT": "Logout"
+  },
+  "WALLET": {
+    "BALANCE": "Balance",
+    "CURRENCY_SUFFIX": ".00 SR",
+    "ADD_BALANCE": "Add balance",
+    "TRANSACTIONS": "transactions"
+  }
+  ,
+  "VALIDATION": {
+    "REQUIRED": "This field is required",
+    "PHONE_PATTERN": "Phone Number must be 11 digits and start with 011, 012, 010, 015",
+    "EMAIL_PATTERN": "Please enter a valid email",
+    "PASSWORD_HAS_NUMBER": "Password should have at least one number",
+    "PASSWORD_SPECIAL_CHAR": "Password should have at least one special character ex:# , $ , % , *",
+    "PASSWORD_UPPERCASE": "Password should have at least one upper case character",
+    "PASSWORD_LOWERCASE": "Password should have at least one lower case character",
+    "MAX": "Current value is {{actual}} and Max is {{max}}",
+    "MIN": "Min value is {{min}}",
+    "MIN_LENGTH": "Password min length is 8 characters",
+    "MAX_LENGTH": "Max length is {{requiredLength}} characters",
+    "REQUIRED_ONE": "Either Onsite or Online must be selected.",
+    "NOT_UNIQUE": "This value has already been taken.",
+    "METRIC_NAME_NOT_UNIQUE": "You cannot add two performance metrics with the same name.",
+    "TOTAL_WEIGHT_EXCEEDED": "Performance metrics weight must not exceed 100.",
+    "MIN_AGE": "Age must be at least 10 years old",
+    "PASSWORDS_MISMATCH": "Passwords do not match"
+  }
+}

@@ -1,0 +1,158 @@
+<div class="booking-details" *ngIf="!loading && !error; else loadingTpl">
+  <div class="header">
+    <div class="title">
+      <span class="ref">#{{ booking?.bookingNumber }}</span>
+      <span class="status" [ngClass]="statusClass(booking?.status)">{{
+        statusLabel(booking?.status)
+      }}</span>
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary" (click)="onAccept()" [disabled]="loading">بدأ العقد</button>
+      <button class="btn btn-danger-outline" (click)="onCancel()" [disabled]="loading">الغاء</button>
+    </div>
+  </div>
+
+  <div class="sections">
+    <div class="card">
+      <div class="card-title">معلومات العميل</div>
+      <div class="row">
+        <div class="item">
+          <div class="label">الاسم كامل</div>
+          <div class="value">{{ booking?.customer?.name || "لا يوجد" }}</div>
+        </div>
+        <div class="item">
+          <div class="label">الجوال</div>
+          <div class="value">{{ booking?.customer?.phone || "لا يوجد" }}</div>
+        </div>
+        <div class="item">
+          <div class="label">الايميل</div>
+          <div class="value">لايوجد</div>
+        </div>
+        <div class="item">
+          <div class="label">رقم الهوية</div>
+          <div class="value">
+            {{ booking?.customer?.nationalId || "لا يوجد" }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">تقييم العميل للشركة</div>
+        <div class="row">
+          <div class="item full">
+            <div class="label">كيف كانت تجربة العميل؟</div>
+            <div class="value">لا يوجد</div>
+          </div>
+          <div class="item full">
+            <div class="label">ملاحظة</div>
+            <div class="value">لا يوجد</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">الفترة</div>
+        <div class="row">
+          <div class="item">
+            <div class="label">تاريخ الاستلام</div>
+            <div class="value">
+              {{ booking?.startTime | date : "mediumDate" }}
+            </div>
+          </div>
+          <div class="item">
+            <div class="label">وقت الاستلام</div>
+            <div class="value">
+              {{ booking?.startTime | date : "shortTime" }}
+            </div>
+          </div>
+          <div class="item">
+            <div class="label">عدد الأيام</div>
+            <div class="value">{{ booking?.rentalDays }}</div>
+          </div>
+          <div class="item">
+            <div class="label">تاريخ التسليم</div>
+            <div class="value">
+              {{ booking?.endTime | date : "mediumDate" }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">الفاتورة</div>
+      <div class="row">
+        <div class="item">
+          <div class="label">طريقة الدفع</div>
+          <div class="value">مسبق الدفع</div>
+        </div>
+        <div class="item">
+          <div class="label">السعر الاجمالي</div>
+          <div class="value">{{ booking?.amountDetails?.totalAmount }}</div>
+        </div>
+        <div class="item">
+          <div class="label">الضريبة</div>
+          <div class="value">{{ booking?.amountDetails?.tax }}</div>
+        </div>
+        <div class="item">
+          <div class="label">الرسوم</div>
+          <div class="value">{{ booking?.amountDetails?.fee }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">السيارة</div>
+        <div class="row">
+          <div class="item">
+            <div class="label">الشركة المصنعة</div>
+            <div class="value">
+              {{ booking?.car?.brand }} {{ booking?.car?.carModel }}
+            </div>
+          </div>
+          <div class="item">
+            <div class="label">نوع التأمين</div>
+            <div class="value">
+              {{ booking?.car?.insuranceType || "لا يوجد" }}
+            </div>
+          </div>
+          <div class="item">
+            <div class="label">توصيل</div>
+            <div class="value">
+              {{ booking?.car?.deliveryOption ? "نعم" : "لا" }}
+            </div>
+          </div>
+          <div class="item">
+            <div class="label">كم محدود</div>
+            <div class="value">{{ booking?.car?.kmLimit || "لا" }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">شركة</div>
+        <div class="row">
+          <div class="item full">
+            <div class="label">اسم الشركة</div>
+            <div class="value">{{ booking?.car?.office?.name }}</div>
+          </div>
+          <div class="item full">
+            <div class="label">عنوان المكتب</div>
+            <div class="value">{{ booking?.customerLocation?.address }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingTpl>
+  <div class="booking-details">
+    <ng-container *ngIf="loading">Loading...</ng-container>
+    <ng-container *ngIf="!loading && error"
+      >Failed to load booking.</ng-container
+    >
+  </div>
+</ng-template>

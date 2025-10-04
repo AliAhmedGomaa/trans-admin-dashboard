@@ -1,0 +1,20 @@
+@import '../../../../../../public/scss/variables';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title {
+  color: $primary-black-font;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+}
+
+.green{
+    color: $primary-green;
+}

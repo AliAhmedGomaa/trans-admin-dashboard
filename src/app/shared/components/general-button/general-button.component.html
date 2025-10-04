@@ -1,0 +1,8 @@
+<a class="general-btn" [routerLink]="route" *ngIf="route">
+  {{ title }}
+</a>
+
+<button class="general-btn" (click)="buttonClicked()" *ngIf="!route" [disabled]="disabled">
+  <img src="images/icons/{{ icon }}.svg" alt="">
+  {{ title }}
+</button>

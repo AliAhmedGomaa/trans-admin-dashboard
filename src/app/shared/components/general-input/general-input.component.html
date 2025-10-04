@@ -1,0 +1,49 @@
+<div class="input-container">
+  <label class="input-container__label">{{ label | translate }}</label>
+  <div
+    class="input-container__wrapper"
+    [ngClass]="{
+      'input-container__wrapper-error': isSubmitted && errors,
+      'auth-input': isAuthInput
+    }"
+  >
+    <div class="input-container__wrapper__phone-input" *ngIf="isPhoneInput">
+      <img src="images/auth/icons/saudi.svg" alt="" srcset="" />
+    </div>
+
+    <img
+      class="input-container__wrapper__icon"
+      *ngIf="icon"
+      [src]="icon"
+      alt="icon"
+    />
+    <input
+      #passwordInput
+      class="input-container__wrapper__input"
+      [type]="type"
+      [placeholder]="(placeholder | translate) || ''"
+      (keypress)="changedValue($event)"
+      [(ngModel)]="input"
+      (ngModelChange)="onChange($event)"
+      (input)="valueChange.emit($any($event.target).value)"
+      (blur)="onInputBlur()"
+      (focus)="onInputFocus()"
+      autocomplete="new-password"
+    />
+
+    <img
+      class="input-container__wrapper__eye-slash"
+      *ngIf="isPassword"
+      [src]="passwordIconSrc"
+      (click)="toggleShowPassword()"
+    />
+  </div>
+
+  <app-validation-errors
+    *ngIf="hasErrorValidation"
+    [isSubmitted]="isSubmitted"
+    [errors]="errors"
+    [mismatchError]="mismatchError"
+    [type]="type"
+  />
+</div>

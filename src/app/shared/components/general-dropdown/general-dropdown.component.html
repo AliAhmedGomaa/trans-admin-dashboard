@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <label>{{ label | translate }}</label>
+  <div class="input-wrapper" [ngClass]="{'input-wrapper-error': isSubmitted && errors}">
+    <mat-select 
+      [placeholder]="(placeholder | translate) || ''" 
+      class="placeholder-custom" 
+      (selectionChange)="valueChange.emit($event.value)"
+      [(ngModel)]="input"
+      (ngModelChange)="onChange($event)">
+      <ng-container *ngFor="let option of options; trackBy: trackByValue">
+        <mat-option [value]="option.value">{{ option.viewValue | translate }}</mat-option>
+      </ng-container>
+    </mat-select>
+  </div>
+  
+  <app-validation-errors
+    *ngIf="hasErrorValidation"
+    [isSubmitted]="isSubmitted"
+    [errors]="errors"
+    [type]="'dropdown'"
+  />
+</div>

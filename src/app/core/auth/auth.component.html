@@ -1,0 +1,73 @@
+<div class="contain bg-red">
+  <section class="login-container" [dir]="currentDir" *ngIf="!currentPage?.isSuccess">
+    <section class="login-info">
+      <div class="language-header flex justify-between">
+        <img class="login-info__logo" src="assets/logos/logo.svg" />
+
+        <div class="language flex gap-2">
+          <button (click)="revertLanguage()">
+            {{ "AUTH.LOGIN.LANGUAGE" | translate }}
+          </button>
+          <!--
+            <img src="assets/images/auth/icons/language.svg" />
+          -->
+        </div>
+      </div>
+
+      <section class="mid-part md:w-[65%] mx-auto">
+        <div
+          *ngIf="currentPage?.hasBack"
+          class="flex gap-2 mb-6 cursor-pointer"
+          (click)="goBack()"
+        >
+          <img src="assets/images/auth/icons/back.svg" />
+          <p>{{ "AUTH.BACK" | translate }}</p>
+        </div>
+        <h2 class="login-info__login-title" *ngIf="currentPage?.loginTitle">
+          <span class="login-info__login-title__p1">
+            {{ (currentPage?.loginTitle | translate).split(" ")[0] }}
+          </span>
+
+          <span class="login-info__login-title__p2">
+            {{ (currentPage?.loginTitle | translate).split(" ")[1] }}
+          </span>
+        </h2>
+
+        <h2 class="login-info__title" *ngIf="!currentPage?.loginTitle">
+          {{ currentPage?.title | translate }}
+        </h2>
+        <p class="login-info__subtitle">
+          {{ currentPage?.subTitle | translate }}
+          <span class="login-info__email" *ngIf="currentPage?.hasEmail">
+            {{ forgotPasswordEmail }}
+          </span>
+          {{ currentPage?.pleaseCheck | translate }}
+        </p>
+
+        <section class="dynamic-part">
+          <router-outlet></router-outlet>
+        </section>
+      </section>
+
+      <ng-template #defaultTemplate> </ng-template>
+
+      <section class="end-part">
+        <ng-template
+          *ngIf="currentPage?.isRedirect; then defaultTemplate"
+        ></ng-template>
+      </section>
+    </section>
+
+    <section class="login-image">
+      <app-auth-slider></app-auth-slider>
+      <!-- <img src="assets/images/auth/login-img.png" alt="" /> -->
+    </section>
+  </section>
+
+  <section class="auth-success" *ngIf="currentPage?.isSuccess">
+    <app-auth-success
+      title="{{ currentPage?.title | translate }}"
+      subTitle="{{ currentPage?.subTitle | translate }}"
+    ></app-auth-success>
+  </section>
+</div>

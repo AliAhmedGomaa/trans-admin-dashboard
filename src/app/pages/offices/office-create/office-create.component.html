@@ -1,0 +1,194 @@
+<div class="office-create">
+  <div class="header">
+    <div class="title">{{ editingId ? 'تعديل مكتب' : 'مكتب جديد' }}</div>
+    <div class="actions">
+      <button class="btn btn-primary" (click)="submit()" [disabled]="loading">
+        {{ editingId ? 'تعديل' : 'اضافة' }}
+      </button>
+      <button class="btn btn-danger-outline" (click)="goBack()">الغاء</button>
+    </div>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="card">
+      <div class="card-title">المكتب</div>
+      <div class="grid" [formGroup]="form">
+        <app-general-input
+          [label]="'اسم المكتب بالعربية'"
+          formControlName="name"
+          [errors]="form.get('name')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+        <app-general-input
+          [label]="'اسم المكتب بالانحليزية'"
+          formControlName="englishName"
+          [errors]="form.get('englishName')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+        <app-general-input
+          [label]="'رقم الهاتف'"
+          formControlName="phone"
+          [errors]="form.get('phone')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+        <app-general-input
+          [label]="'رقم المكتب'"
+          formControlName="officeNumber"
+          [errors]="form.get('officeNumber')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+        <app-general-input
+          [label]="'مدير المكتب'"
+          formControlName="manager"
+          [errors]="form.get('manager')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+        <app-general-input
+          [label]="'الرقم التجارى'"
+          formControlName="commercialRegisterNumber"
+          [errors]="form.get('commercialRegisterNumber')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">العنوان</div>
+      <div class="grid" [formGroup]="form">
+        <app-general-input
+          [label]="'عنوان الفرع'"
+          formControlName="address"
+          [errors]="form.get('address')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+        <app-general-input
+          [label]="'المدينة'"
+          formControlName="city"
+          [errors]="form.get('city')?.errors"
+          [isSubmitted]="isSubmitted"
+        ></app-general-input>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">معلومات البنك</div>
+      <div class="grid" [formGroup]="$any(form.get('bankingInfo'))">
+        <app-general-input
+          [label]="'اسم البنك'"
+          formControlName="bankName"
+          [isSubmitted]="isSubmitted"
+          [errors]="form.get('bankingInfo.bankName')?.errors"
+        ></app-general-input>
+        <app-general-input
+          [label]="'اسم الحساب'"
+          formControlName="accountName"
+          [isSubmitted]="isSubmitted"
+          [errors]="form.get('bankingInfo.accountName')?.errors"
+        ></app-general-input>
+        <app-general-input
+          [label]="'رقم الايبان (IBAN)'"
+          formControlName="ibanNumber"
+          [isSubmitted]="isSubmitted"
+          [errors]="form.get('bankingInfo.ibanNumber')?.errors"
+        ></app-general-input>
+        <app-general-input
+          [label]="'رقم الحساب'"
+          formControlName="accountNumber"
+          [isSubmitted]="isSubmitted"
+          [errors]="form.get('bankingInfo.accountNumber')?.errors"
+        ></app-general-input>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">الموقع</div>
+      <div class="grid" [formGroup]="form">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="openLocationPicker()"
+        >
+          اختر الموقع
+        </button>
+      </div>
+      <div class="grid" class="mt-4">
+        <label class="flex flex-col gap-2">
+          <span>{{ "COMMON.LOGO" | translate }}</span>
+        </label>
+        <div
+          class="upload-zone"
+          [class.dragging]="isDragging"
+          (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)"
+          (drop)="onDrop($event)"
+        >
+          <div class="upload-zone__content">
+            <div class="upload-zone__icon">📤</div>
+            <div class="upload-zone__title">اسحب الملف أو تصفح جهازك</div>
+            <div class="upload-zone__hint">
+              يجب أن يكون الملف بصيغة png, jpg, doc, pdf ولا يتعدى حجمه 5MB
+            </div>
+            <div class="upload-zone__actions">
+              <button
+                type="button"
+                class="btn btn-light"
+                (click)="logoInput.click()"
+              >
+                تصفح للملفات
+              </button>
+              <input
+                #logoInput
+                type="file"
+                style="display: none"
+                (change)="onLogoChange($event)"
+              />
+            </div>
+            <div class="upload-zone__file" *ngIf="logoFile">
+              {{ logoFile.name }}
+            </div>
+            <div class="upload-zone__error" *ngIf="logoError">
+              {{ logoError }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="location-modal" *ngIf="showLocationModal">
+      <div
+        class="location-modal__overlay"
+        (click)="closeLocationPicker()"
+      ></div>
+      <div class="location-modal__content">
+        <div class="location-modal__header">
+          <div class="location-modal__title">اختر الموقع</div>
+          <button type="button" class="close" (click)="closeLocationPicker()">
+            ×
+          </button>
+        </div>
+        <div class="location-modal__map-wrapper">
+          <div class="location-modal__search">
+            <input
+              #modalSearchInput
+              type="text"
+              placeholder="اكتب العنوان واختر"
+            />
+          </div>
+          <div #mapContainer class="location-modal__map"></div>
+        </div>
+        <div class="location-modal__footer">
+          <button type="button" class="btn" (click)="closeLocationPicker()">
+            الغاء
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="confirmLocation()"
+          >
+            تحديد
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
